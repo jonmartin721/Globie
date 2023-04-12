@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            b_Clear = new Button();
-            b_Send = new Button();
-            b_Stop = new Button();
-            l_topDesc = new Label();
-            pictureBox1 = new PictureBox();
-            l_statusDesc = new Label();
-            l_Status = new Label();
-            tabControl1 = new TabControl();
-            codeAnalyzer = new TabPage();
-            askGlobie = new TabPage();
-            richTextBox1 = new RichTextBox();
-            label1 = new Label();
-            richTextBox2 = new RichTextBox();
+            b_Clear=new Button();
+            b_Send=new Button();
+            b_Stop=new Button();
+            l_topDesc=new Label();
+            pictureBox1=new PictureBox();
+            l_statusDesc=new Label();
+            l_Status=new Label();
+            tabControl1=new TabControl();
+            codeAnalyzer=new TabPage();
+            richTextBox2=new RichTextBox();
+            askGlobie=new TabPage();
+            richTextBox1=new RichTextBox();
+            label1=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             codeAnalyzer.SuspendLayout();
@@ -48,139 +48,140 @@
             // 
             // b_Clear
             // 
-            b_Clear.Location = new Point(624, 690);
-            b_Clear.Name = "b_Clear";
-            b_Clear.Size = new Size(75, 23);
-            b_Clear.TabIndex = 0;
-            b_Clear.Text = "Clear";
-            b_Clear.UseVisualStyleBackColor = true;
+            b_Clear.Location=new Point(624, 690);
+            b_Clear.Name="b_Clear";
+            b_Clear.Size=new Size(75, 23);
+            b_Clear.TabIndex=0;
+            b_Clear.Text="Clear";
+            b_Clear.UseVisualStyleBackColor=true;
             // 
             // b_Send
             // 
-            b_Send.ForeColor = Color.Green;
-            b_Send.Location = new Point(786, 690);
-            b_Send.Name = "b_Send";
-            b_Send.Size = new Size(136, 23);
-            b_Send.TabIndex = 1;
-            b_Send.Text = "Send";
-            b_Send.UseVisualStyleBackColor = true;
+            b_Send.ForeColor=Color.Green;
+            b_Send.Location=new Point(786, 690);
+            b_Send.Name="b_Send";
+            b_Send.Size=new Size(136, 23);
+            b_Send.TabIndex=1;
+            b_Send.Text="Send";
+            b_Send.UseVisualStyleBackColor=true;
             // 
             // b_Stop
             // 
-            b_Stop.ForeColor = Color.Red;
-            b_Stop.Location = new Point(705, 690);
-            b_Stop.Name = "b_Stop";
-            b_Stop.Size = new Size(75, 23);
-            b_Stop.TabIndex = 2;
-            b_Stop.Text = "Stop";
-            b_Stop.UseVisualStyleBackColor = true;
+            b_Stop.ForeColor=Color.Red;
+            b_Stop.Location=new Point(705, 690);
+            b_Stop.Name="b_Stop";
+            b_Stop.Size=new Size(75, 23);
+            b_Stop.TabIndex=2;
+            b_Stop.Text="Stop";
+            b_Stop.UseVisualStyleBackColor=true;
             // 
             // l_topDesc
             // 
-            l_topDesc.AutoSize = true;
-            l_topDesc.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            l_topDesc.Location = new Point(18, 13);
-            l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(359, 80);
-            l_topDesc.TabIndex = 4;
-            l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
-            l_topDesc.Click += label1_Click;
+            l_topDesc.AutoSize=true;
+            l_topDesc.Font=new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            l_topDesc.Location=new Point(18, 13);
+            l_topDesc.Name="l_topDesc";
+            l_topDesc.Size=new Size(359, 80);
+            l_topDesc.TabIndex=4;
+            l_topDesc.Text="Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
+            l_topDesc.Click+=label1_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.MicrosoftTeams_image__1_;
-            pictureBox1.Location = new Point(748, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(170, 170);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.Image=Properties.Resources.MicrosoftTeams_image__1_;
+            pictureBox1.Location=new Point(748, 11);
+            pictureBox1.Name="pictureBox1";
+            pictureBox1.Size=new Size(170, 170);
+            pictureBox1.SizeMode=PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex=6;
+            pictureBox1.TabStop=false;
+            pictureBox1.Click+=pictureBox1_Click;
             // 
             // l_statusDesc
             // 
-            l_statusDesc.AutoSize = true;
-            l_statusDesc.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            l_statusDesc.Location = new Point(18, 131);
-            l_statusDesc.Name = "l_statusDesc";
-            l_statusDesc.Size = new Size(62, 18);
-            l_statusDesc.TabIndex = 8;
-            l_statusDesc.Text = "Status:";
-            l_statusDesc.Click += label1_Click_1;
+            l_statusDesc.AutoSize=true;
+            l_statusDesc.Font=new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            l_statusDesc.Location=new Point(18, 131);
+            l_statusDesc.Name="l_statusDesc";
+            l_statusDesc.Size=new Size(62, 18);
+            l_statusDesc.TabIndex=8;
+            l_statusDesc.Text="Status:";
+            l_statusDesc.Click+=label1_Click_1;
             // 
             // l_Status
             // 
-            l_Status.AutoSize = true;
-            l_Status.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            l_Status.Location = new Point(86, 131);
-            l_Status.Name = "l_Status";
-            l_Status.Size = new Size(101, 18);
-            l_Status.TabIndex = 9;
-            l_Status.Text = "CurrentStatus";
+            l_Status.AutoSize=true;
+            l_Status.Font=new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            l_Status.Location=new Point(86, 131);
+            l_Status.Name="l_Status";
+            l_Status.Size=new Size(101, 18);
+            l_Status.TabIndex=9;
+            l_Status.Text="CurrentStatus";
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(codeAnalyzer);
             tabControl1.Controls.Add(askGlobie);
-            tabControl1.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tabControl1.Location = new Point(14, 163);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(908, 231);
-            tabControl1.TabIndex = 10;
+            tabControl1.Font=new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tabControl1.Location=new Point(14, 163);
+            tabControl1.Name="tabControl1";
+            tabControl1.SelectedIndex=0;
+            tabControl1.Size=new Size(908, 231);
+            tabControl1.TabIndex=10;
             // 
             // codeAnalyzer
             // 
             codeAnalyzer.Controls.Add(richTextBox2);
-            codeAnalyzer.Location = new Point(4, 24);
-            codeAnalyzer.Name = "codeAnalyzer";
-            codeAnalyzer.Padding = new Padding(3);
-            codeAnalyzer.Size = new Size(900, 203);
-            codeAnalyzer.TabIndex = 0;
-            codeAnalyzer.Text = "Code Analyzer";
-            codeAnalyzer.UseVisualStyleBackColor = true;
-            // 
-            // askGlobie
-            // 
-            askGlobie.Location = new Point(4, 24);
-            askGlobie.Name = "askGlobie";
-            askGlobie.Padding = new Padding(3);
-            askGlobie.Size = new Size(900, 203);
-            askGlobie.TabIndex = 1;
-            askGlobie.Text = "Ask Globie!";
-            askGlobie.UseVisualStyleBackColor = true;
-            askGlobie.Click += askGlobie_Click;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(18, 440);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(904, 230);
-            richTextBox1.TabIndex = 11;
-            richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 411);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 18);
-            label1.TabIndex = 12;
-            label1.Text = "Response:";
+            codeAnalyzer.Location=new Point(4, 24);
+            codeAnalyzer.Name="codeAnalyzer";
+            codeAnalyzer.Padding=new Padding(3);
+            codeAnalyzer.Size=new Size(900, 203);
+            codeAnalyzer.TabIndex=0;
+            codeAnalyzer.Text="Code Analyzer";
+            codeAnalyzer.UseVisualStyleBackColor=true;
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(6, 6);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(888, 191);
-            richTextBox2.TabIndex = 0;
-            richTextBox2.Text = "";
+            richTextBox2.Location=new Point(6, 6);
+            richTextBox2.Name="richTextBox2";
+            richTextBox2.Size=new Size(888, 191);
+            richTextBox2.TabIndex=0;
+            richTextBox2.Text="";
+            richTextBox2.TextChanged+=richTextBox2_TextChanged;
+            // 
+            // askGlobie
+            // 
+            askGlobie.Location=new Point(4, 24);
+            askGlobie.Name="askGlobie";
+            askGlobie.Padding=new Padding(3);
+            askGlobie.Size=new Size(900, 203);
+            askGlobie.TabIndex=1;
+            askGlobie.Text="Ask Globie!";
+            askGlobie.UseVisualStyleBackColor=true;
+            askGlobie.Click+=askGlobie_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location=new Point(18, 440);
+            richTextBox1.Name="richTextBox1";
+            richTextBox1.Size=new Size(904, 230);
+            richTextBox1.TabIndex=11;
+            richTextBox1.Text="";
+            // 
+            // label1
+            // 
+            label1.AutoSize=true;
+            label1.Font=new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location=new Point(18, 411);
+            label1.Name="label1";
+            label1.Size=new Size(75, 18);
+            label1.TabIndex=12;
+            label1.Text="Response:";
             // 
             // f_main
             // 
-            AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(934, 725);
+            AutoScaleMode=AutoScaleMode.None;
+            ClientSize=new Size(934, 725);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
@@ -191,9 +192,9 @@
             Controls.Add(b_Stop);
             Controls.Add(b_Send);
             Controls.Add(b_Clear);
-            Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "f_main";
-            Text = "Globey - GSS AI";
+            Font=new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Name="f_main";
+            Text="Globey - GSS AI";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             codeAnalyzer.ResumeLayout(false);
