@@ -41,10 +41,12 @@
             askGlobie = new TabPage();
             richTextBox1 = new RichTextBox();
             label1 = new Label();
+            l_codeAnalyzerTop = new Label();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             codeAnalyzer.SuspendLayout();
+            askGlobie.SuspendLayout();
             SuspendLayout();
             // 
             // b_Clear
@@ -85,9 +87,9 @@
             l_topDesc.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             l_topDesc.Location = new Point(14, 9);
             l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(311, 75);
+            l_topDesc.Size = new Size(306, 60);
             l_topDesc.TabIndex = 4;
-            l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
+            l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to select \r\n";
             l_topDesc.Click += label1_Click;
             // 
             // pictureBox1
@@ -135,8 +137,7 @@
             // 
             // codeAnalyzer
             // 
-            codeAnalyzer.Controls.Add(label2);
-            codeAnalyzer.Controls.Add(richTextBox2);
+            codeAnalyzer.Controls.Add(l_codeAnalyzerTop);
             codeAnalyzer.Location = new Point(4, 24);
             codeAnalyzer.Name = "codeAnalyzer";
             codeAnalyzer.Padding = new Padding(3);
@@ -155,6 +156,8 @@
             // 
             // askGlobie
             // 
+            askGlobie.Controls.Add(label2);
+            askGlobie.Controls.Add(richTextBox2);
             askGlobie.Location = new Point(4, 24);
             askGlobie.Name = "askGlobie";
             askGlobie.Padding = new Padding(3);
@@ -183,15 +186,24 @@
             label1.TabIndex = 12;
             label1.Text = "Response:";
             // 
+            // l_codeAnalyzerTop
+            // 
+            l_codeAnalyzerTop.AutoSize = true;
+            l_codeAnalyzerTop.Location = new Point(6, 10);
+            l_codeAnalyzerTop.Name = "l_codeAnalyzerTop";
+            l_codeAnalyzerTop.Size = new Size(404, 15);
+            l_codeAnalyzerTop.TabIndex = 13;
+            l_codeAnalyzerTop.Text = "Upload your code below and click \"Send\" at the bottom when you're ready.";
+            l_codeAnalyzerTop.Click += label2_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 13);
+            label2.Location = new Point(6, 10);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 13;
-            label2.Text = "label2";
-            label2.Click += label2_Click;
+            label2.Size = new Size(404, 15);
+            label2.TabIndex = 14;
+            label2.Text = "Upload your code below and click \"Send\" at the bottom when you're ready.";
             // 
             // f_main
             // 
@@ -215,6 +227,8 @@
             tabControl1.ResumeLayout(false);
             codeAnalyzer.ResumeLayout(false);
             codeAnalyzer.PerformLayout();
+            askGlobie.ResumeLayout(false);
+            askGlobie.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,6 +248,7 @@
         private RichTextBox richTextBox1;
         private Label label1;
         private RichTextBox richTextBox2;
+        private Label l_codeAnalyzerTop;
         private Label label2;
     }
 }
