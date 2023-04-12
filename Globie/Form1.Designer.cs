@@ -85,10 +85,9 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.photo_2023_04_12_16_27_17;
-            pictureBox1.Location = new Point(536, 16);
+            pictureBox1.Location = new Point(539, 13);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(379, 141);
+            pictureBox1.Size = new Size(379, 149);
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -129,7 +128,7 @@
             codeAnalyzer.Location = new Point(4, 24);
             codeAnalyzer.Name = "codeAnalyzer";
             codeAnalyzer.Padding = new Padding(3);
-            codeAnalyzer.Size = new Size(747, 177);
+            codeAnalyzer.Size = new Size(900, 203);
             codeAnalyzer.TabIndex = 0;
             codeAnalyzer.Text = "Code Analyzer";
             codeAnalyzer.UseVisualStyleBackColor = true;
@@ -167,12 +166,12 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(934, 725);
+            Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
             Controls.Add(tabControl1);
             Controls.Add(l_Status);
             Controls.Add(l_statusDesc);
-            Controls.Add(pictureBox1);
             Controls.Add(l_topDesc);
             Controls.Add(b_Stop);
             Controls.Add(b_Send);
