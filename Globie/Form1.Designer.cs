@@ -40,8 +40,10 @@
             askGlobie = new TabPage();
             richTextBox1 = new RichTextBox();
             label1 = new Label();
+            richTextBox2 = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
+            codeAnalyzer.SuspendLayout();
             SuspendLayout();
             // 
             // b_Clear
@@ -86,9 +88,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(539, 13);
+            pictureBox1.Image = Properties.Resources.MicrosoftTeams_image__1_;
+            pictureBox1.Location = new Point(748, 11);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(379, 149);
+            pictureBox1.Size = new Size(170, 170);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -127,6 +131,7 @@
             // 
             // codeAnalyzer
             // 
+            codeAnalyzer.Controls.Add(richTextBox2);
             codeAnalyzer.Location = new Point(4, 24);
             codeAnalyzer.Name = "codeAnalyzer";
             codeAnalyzer.Padding = new Padding(3);
@@ -164,6 +169,14 @@
             label1.TabIndex = 12;
             label1.Text = "Response:";
             // 
+            // richTextBox2
+            // 
+            richTextBox2.Location = new Point(6, 6);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(888, 191);
+            richTextBox2.TabIndex = 0;
+            richTextBox2.Text = "";
+            // 
             // f_main
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -183,6 +196,7 @@
             Text = "Globey - GSS AI";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
+            codeAnalyzer.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,5 +215,6 @@
         private TabPage askGlobie;
         private RichTextBox richTextBox1;
         private Label label1;
+        private RichTextBox richTextBox2;
     }
 }

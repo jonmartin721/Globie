@@ -63,6 +63,16 @@ namespace Globie.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MicrosoftTeams_image__1_ {
+            get {
+                object obj = ResourceManager.GetObject("MicrosoftTeams-image (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_2023_04_12_16_27_17 {
             get {
                 object obj = ResourceManager.GetObject("photo_2023-04-12_16-27-17", resourceCulture);
