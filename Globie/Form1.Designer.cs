@@ -45,7 +45,7 @@
             // 
             // b_Clear
             // 
-            b_Clear.Location = new Point(492, 553);
+            b_Clear.Location = new Point(624, 690);
             b_Clear.Name = "b_Clear";
             b_Clear.Size = new Size(75, 23);
             b_Clear.TabIndex = 0;
@@ -55,7 +55,7 @@
             // b_Send
             // 
             b_Send.ForeColor = Color.Green;
-            b_Send.Location = new Point(654, 553);
+            b_Send.Location = new Point(786, 690);
             b_Send.Name = "b_Send";
             b_Send.Size = new Size(136, 23);
             b_Send.TabIndex = 1;
@@ -65,7 +65,7 @@
             // b_Stop
             // 
             b_Stop.ForeColor = Color.Red;
-            b_Stop.Location = new Point(573, 553);
+            b_Stop.Location = new Point(705, 690);
             b_Stop.Name = "b_Stop";
             b_Stop.Size = new Size(75, 23);
             b_Stop.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(349, 13);
+            pictureBox1.Location = new Point(492, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(420, 82);
             pictureBox1.TabIndex = 6;
@@ -118,7 +118,7 @@
             tabControl1.Location = new Point(14, 134);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(755, 205);
+            tabControl1.Size = new Size(908, 345);
             tabControl1.TabIndex = 10;
             // 
             // codeAnalyzer
@@ -136,23 +136,24 @@
             askGlobie.Location = new Point(4, 24);
             askGlobie.Name = "askGlobie";
             askGlobie.Padding = new Padding(3);
-            askGlobie.Size = new Size(747, 177);
+            askGlobie.Size = new Size(900, 317);
             askGlobie.TabIndex = 1;
             askGlobie.Text = "Ask Globie!";
             askGlobie.UseVisualStyleBackColor = true;
+            askGlobie.Click += askGlobie_Click;
             // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(18, 345);
+            richTextBox1.Location = new Point(12, 485);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(747, 185);
+            richTextBox1.Size = new Size(910, 185);
             richTextBox1.TabIndex = 11;
             richTextBox1.Text = "";
             // 
             // f_main
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(802, 588);
+            ClientSize = new Size(934, 725);
             Controls.Add(richTextBox1);
             Controls.Add(tabControl1);
             Controls.Add(l_Status);

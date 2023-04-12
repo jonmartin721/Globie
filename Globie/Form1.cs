@@ -21,5 +21,10 @@ namespace Globie
         {
 
         }
+
+        private void askGlobie_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
