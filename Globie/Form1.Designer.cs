@@ -158,7 +158,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 417);
+            label1.Location = new Point(18, 411);
             label1.Name = "label1";
             label1.Size = new Size(75, 18);
             label1.TabIndex = 12;
