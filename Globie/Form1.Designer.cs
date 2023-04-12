@@ -76,9 +76,10 @@
             // l_topDesc
             // 
             l_topDesc.AutoSize = true;
-            l_topDesc.Location = new Point(12, 13);
+            l_topDesc.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            l_topDesc.Location = new Point(18, 13);
             l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(311, 75);
+            l_topDesc.Size = new Size(351, 80);
             l_topDesc.TabIndex = 4;
             l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
             l_topDesc.Click += label1_Click;
@@ -95,10 +96,10 @@
             // l_statusDesc
             // 
             l_statusDesc.AutoSize = true;
-            l_statusDesc.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            l_statusDesc.Location = new Point(18, 126);
+            l_statusDesc.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            l_statusDesc.Location = new Point(18, 131);
             l_statusDesc.Name = "l_statusDesc";
-            l_statusDesc.Size = new Size(57, 20);
+            l_statusDesc.Size = new Size(62, 18);
             l_statusDesc.TabIndex = 8;
             l_statusDesc.Text = "Status:";
             l_statusDesc.Click += label1_Click_1;
@@ -106,10 +107,10 @@
             // l_Status
             // 
             l_Status.AutoSize = true;
-            l_Status.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            l_Status.Location = new Point(77, 126);
+            l_Status.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            l_Status.Location = new Point(86, 131);
             l_Status.Name = "l_Status";
-            l_Status.Size = new Size(97, 20);
+            l_Status.Size = new Size(101, 18);
             l_Status.TabIndex = 9;
             l_Status.Text = "CurrentStatus";
             // 
@@ -117,6 +118,7 @@
             // 
             tabControl1.Controls.Add(codeAnalyzer);
             tabControl1.Controls.Add(askGlobie);
+            tabControl1.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tabControl1.Location = new Point(14, 163);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -155,10 +157,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(18, 417);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(75, 18);
             label1.TabIndex = 12;
             label1.Text = "Response:";
             // 
@@ -176,6 +178,7 @@
             Controls.Add(b_Stop);
             Controls.Add(b_Send);
             Controls.Add(b_Clear);
+            Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "f_main";
             Text = "Globey - GSS AI";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
