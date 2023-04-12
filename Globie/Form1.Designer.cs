@@ -50,7 +50,7 @@
             // b_Clear
             // 
             b_Clear.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            b_Clear.Location = new Point(624, 690);
+            b_Clear.Location = new Point(507, 690);
             b_Clear.Name = "b_Clear";
             b_Clear.Size = new Size(75, 23);
             b_Clear.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             b_Send.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             b_Send.ForeColor = Color.Green;
-            b_Send.Location = new Point(786, 690);
+            b_Send.Location = new Point(669, 690);
             b_Send.Name = "b_Send";
             b_Send.Size = new Size(136, 23);
             b_Send.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             b_Stop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             b_Stop.ForeColor = Color.Red;
-            b_Stop.Location = new Point(705, 690);
+            b_Stop.Location = new Point(588, 690);
             b_Stop.Name = "b_Stop";
             b_Stop.Size = new Size(75, 23);
             b_Stop.TabIndex = 2;
@@ -82,10 +82,10 @@
             // l_topDesc
             // 
             l_topDesc.AutoSize = true;
-            l_topDesc.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            l_topDesc.Location = new Point(190, 11);
+            l_topDesc.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            l_topDesc.Location = new Point(14, 9);
             l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(351, 85);
+            l_topDesc.Size = new Size(311, 75);
             l_topDesc.TabIndex = 4;
             l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
             l_topDesc.Click += label1_Click;
@@ -93,7 +93,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.MicrosoftTeams_image__1_;
-            pictureBox1.Location = new Point(14, 11);
+            pictureBox1.Location = new Point(635, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(170, 170);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -104,7 +104,7 @@
             // l_statusDesc
             // 
             l_statusDesc.AutoSize = true;
-            l_statusDesc.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            l_statusDesc.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
             l_statusDesc.Location = new Point(18, 690);
             l_statusDesc.Name = "l_statusDesc";
             l_statusDesc.Size = new Size(57, 20);
@@ -115,7 +115,7 @@
             // l_Status
             // 
             l_Status.AutoSize = true;
-            l_Status.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            l_Status.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             l_Status.Location = new Point(81, 690);
             l_Status.Name = "l_Status";
             l_Status.Size = new Size(97, 20);
@@ -130,25 +130,26 @@
             tabControl1.Location = new Point(14, 187);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(908, 207);
+            tabControl1.Size = new Size(791, 207);
             tabControl1.TabIndex = 10;
             // 
             // codeAnalyzer
             // 
+            codeAnalyzer.Controls.Add(label2);
             codeAnalyzer.Controls.Add(richTextBox2);
             codeAnalyzer.Location = new Point(4, 24);
             codeAnalyzer.Name = "codeAnalyzer";
             codeAnalyzer.Padding = new Padding(3);
-            codeAnalyzer.Size = new Size(900, 179);
+            codeAnalyzer.Size = new Size(783, 179);
             codeAnalyzer.TabIndex = 0;
             codeAnalyzer.Text = "Code Analyzer";
             codeAnalyzer.UseVisualStyleBackColor = true;
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(6, 6);
+            richTextBox2.Location = new Point(6, 31);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(888, 191);
+            richTextBox2.Size = new Size(771, 142);
             richTextBox2.TabIndex = 0;
             richTextBox2.Text = "";
             // 
@@ -157,7 +158,7 @@
             askGlobie.Location = new Point(4, 24);
             askGlobie.Name = "askGlobie";
             askGlobie.Padding = new Padding(3);
-            askGlobie.Size = new Size(900, 179);
+            askGlobie.Size = new Size(783, 179);
             askGlobie.TabIndex = 1;
             askGlobie.Text = "Ask Globie!";
             askGlobie.UseVisualStyleBackColor = true;
@@ -168,34 +169,34 @@
             richTextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox1.Location = new Point(18, 440);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(904, 230);
+            richTextBox1.Size = new Size(787, 230);
             richTextBox1.TabIndex = 11;
             richTextBox1.Text = "";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(18, 411);
             label1.Name = "label1";
-            label1.Size = new Size(75, 20);
+            label1.Size = new Size(70, 19);
             label1.TabIndex = 12;
             label1.Text = "Response:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(190, 121);
+            label2.Location = new Point(3, 13);
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 13;
             label2.Text = "label2";
+            label2.Click += label2_Click;
             // 
             // f_main
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(934, 725);
-            Controls.Add(label2);
+            ClientSize = new Size(816, 722);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
@@ -209,9 +210,11 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "f_main";
             Text = "Globey - GSS AI";
+            Load += f_main_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
             codeAnalyzer.ResumeLayout(false);
+            codeAnalyzer.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
