@@ -76,10 +76,10 @@
             // l_topDesc
             // 
             l_topDesc.AutoSize = true;
-            l_topDesc.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            l_topDesc.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             l_topDesc.Location = new Point(18, 13);
             l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(351, 80);
+            l_topDesc.Size = new Size(359, 80);
             l_topDesc.TabIndex = 4;
             l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to choose\r\nand I'll see what I can do!\r\n";
             l_topDesc.Click += label1_Click;
