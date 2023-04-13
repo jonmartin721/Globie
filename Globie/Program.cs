@@ -1,5 +1,9 @@
 using OpenAI.GPT3.Managers;
 using OpenAI.GPT3;
+using OpenAI;
+using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography.X509Certificates;
+using System.Configuration;
 
 namespace Globie
 {
@@ -11,16 +15,31 @@ namespace Globie
         [STAThread]
         static void Main()
         {
-            var apiKey = "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";
-            // Create an instance of the OpenAIService class
-            var gpt3 = new OpenAIService(new OpenAiOptions()
-            {
-                ApiKey = apiKey
-            });
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new f_main());
         }
     }
+    public class ChatGPT
+    {
+        private IConfiguration configuration;
+
+        public OpenAIService OpenAIService { get; set; }
+
+        public ChatGPT()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+               .AddJsonFile("secrets.json")
+               .Build();
+            string apiKey = configuration["OpenAIServiceOptions:ApiKey"];
+
+            OpenAIService = new OpenAIService(new OpenAiOptions()
+            {
+                ApiKey = apiKey
+            });
+        }
+
+    }
 }
+
