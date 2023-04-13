@@ -28,21 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_main));
             b_Clear = new Button();
             b_Send = new Button();
-            b_Stop = new Button();
             l_topDesc = new Label();
             pictureBox1 = new PictureBox();
             l_statusDesc = new Label();
             l_Status = new Label();
             tabControl1 = new TabControl();
             codeAnalyzer = new TabPage();
-            richTextBox2 = new RichTextBox();
-            askGlobie = new TabPage();
-            richTextBox1 = new RichTextBox();
-            label1 = new Label();
+            l_fileChooser = new Label();
+            button2 = new Button();
+            b_fileChooser = new Button();
+            tb_fileURL = new TextBox();
             l_codeAnalyzerTop = new Label();
-            label2 = new Label();
+            askGlobie = new TabPage();
+            l_askGlobeyTop = new Label();
+            rt_askGlobey = new RichTextBox();
+            rt_response = new RichTextBox();
+            label1 = new Label();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             codeAnalyzer.SuspendLayout();
@@ -52,7 +57,7 @@
             // b_Clear
             // 
             b_Clear.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            b_Clear.Location = new Point(507, 690);
+            b_Clear.Location = new Point(588, 690);
             b_Clear.Name = "b_Clear";
             b_Clear.Size = new Size(75, 23);
             b_Clear.TabIndex = 0;
@@ -70,17 +75,6 @@
             b_Send.Text = "Send";
             b_Send.UseVisualStyleBackColor = true;
             // 
-            // b_Stop
-            // 
-            b_Stop.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            b_Stop.ForeColor = Color.Red;
-            b_Stop.Location = new Point(588, 690);
-            b_Stop.Name = "b_Stop";
-            b_Stop.Size = new Size(75, 23);
-            b_Stop.TabIndex = 2;
-            b_Stop.Text = "Stop";
-            b_Stop.UseVisualStyleBackColor = true;
-            // 
             // l_topDesc
             // 
             l_topDesc.AutoSize = true;
@@ -95,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.MicrosoftTeams_image__1_;
-            pictureBox1.Location = new Point(635, 12);
+            pictureBox1.Location = new Point(631, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(170, 170);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -123,6 +117,7 @@
             l_Status.Size = new Size(97, 20);
             l_Status.TabIndex = 9;
             l_Status.Text = "CurrentStatus";
+            l_Status.Visible = false;
             // 
             // tabControl1
             // 
@@ -137,6 +132,10 @@
             // 
             // codeAnalyzer
             // 
+            codeAnalyzer.Controls.Add(l_fileChooser);
+            codeAnalyzer.Controls.Add(button2);
+            codeAnalyzer.Controls.Add(b_fileChooser);
+            codeAnalyzer.Controls.Add(tb_fileURL);
             codeAnalyzer.Controls.Add(l_codeAnalyzerTop);
             codeAnalyzer.Location = new Point(4, 24);
             codeAnalyzer.Name = "codeAnalyzer";
@@ -146,18 +145,56 @@
             codeAnalyzer.Text = "Code Analyzer";
             codeAnalyzer.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // l_fileChooser
             // 
-            richTextBox2.Location = new Point(6, 31);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(771, 142);
-            richTextBox2.TabIndex = 0;
-            richTextBox2.Text = "";
+            l_fileChooser.AutoSize = true;
+            l_fileChooser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            l_fileChooser.Location = new Point(6, 49);
+            l_fileChooser.Name = "l_fileChooser";
+            l_fileChooser.Size = new Size(60, 15);
+            l_fileChooser.TabIndex = 17;
+            l_fileChooser.Text = "Code File:";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(6, 96);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 16;
+            button2.Text = "Browse...";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // b_fileChooser
+            // 
+            b_fileChooser.Image = (Image)resources.GetObject("b_fileChooser.Image");
+            b_fileChooser.Location = new Point(6, 67);
+            b_fileChooser.Name = "b_fileChooser";
+            b_fileChooser.Size = new Size(27, 23);
+            b_fileChooser.TabIndex = 15;
+            b_fileChooser.Text = "button1";
+            b_fileChooser.UseVisualStyleBackColor = true;
+            // 
+            // tb_fileURL
+            // 
+            tb_fileURL.Location = new Point(39, 68);
+            tb_fileURL.Name = "tb_fileURL";
+            tb_fileURL.Size = new Size(404, 23);
+            tb_fileURL.TabIndex = 14;
+            // 
+            // l_codeAnalyzerTop
+            // 
+            l_codeAnalyzerTop.AutoSize = true;
+            l_codeAnalyzerTop.Location = new Point(6, 10);
+            l_codeAnalyzerTop.Name = "l_codeAnalyzerTop";
+            l_codeAnalyzerTop.Size = new Size(432, 15);
+            l_codeAnalyzerTop.TabIndex = 13;
+            l_codeAnalyzerTop.Text = "Upload your code below and click \"Send\" at the bottom right when you're ready.";
+            l_codeAnalyzerTop.Click += label2_Click;
             // 
             // askGlobie
             // 
-            askGlobie.Controls.Add(label2);
-            askGlobie.Controls.Add(richTextBox2);
+            askGlobie.Controls.Add(l_askGlobeyTop);
+            askGlobie.Controls.Add(rt_askGlobey);
             askGlobie.Location = new Point(4, 24);
             askGlobie.Name = "askGlobie";
             askGlobie.Padding = new Padding(3);
@@ -167,14 +204,31 @@
             askGlobie.UseVisualStyleBackColor = true;
             askGlobie.Click += askGlobie_Click;
             // 
-            // richTextBox1
+            // l_askGlobeyTop
             // 
-            richTextBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            richTextBox1.Location = new Point(18, 440);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(787, 230);
-            richTextBox1.TabIndex = 11;
-            richTextBox1.Text = "";
+            l_askGlobeyTop.AutoSize = true;
+            l_askGlobeyTop.Location = new Point(6, 9);
+            l_askGlobeyTop.Name = "l_askGlobeyTop";
+            l_askGlobeyTop.Size = new Size(687, 15);
+            l_askGlobeyTop.TabIndex = 14;
+            l_askGlobeyTop.Text = "Ask me anything about Global Shop Solutions! I'll use some data I've been provided along with general knowledge to do my best.";
+            // 
+            // rt_askGlobey
+            // 
+            rt_askGlobey.Location = new Point(6, 31);
+            rt_askGlobey.Name = "rt_askGlobey";
+            rt_askGlobey.Size = new Size(771, 142);
+            rt_askGlobey.TabIndex = 0;
+            rt_askGlobey.Text = "";
+            // 
+            // rt_response
+            // 
+            rt_response.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rt_response.Location = new Point(14, 440);
+            rt_response.Name = "rt_response";
+            rt_response.Size = new Size(787, 230);
+            rt_response.TabIndex = 11;
+            rt_response.Text = "";
             // 
             // label1
             // 
@@ -186,24 +240,10 @@
             label1.TabIndex = 12;
             label1.Text = "Response:";
             // 
-            // l_codeAnalyzerTop
+            // openFileDialog1
             // 
-            l_codeAnalyzerTop.AutoSize = true;
-            l_codeAnalyzerTop.Location = new Point(6, 10);
-            l_codeAnalyzerTop.Name = "l_codeAnalyzerTop";
-            l_codeAnalyzerTop.Size = new Size(404, 15);
-            l_codeAnalyzerTop.TabIndex = 13;
-            l_codeAnalyzerTop.Text = "Upload your code below and click \"Send\" at the bottom when you're ready.";
-            l_codeAnalyzerTop.Click += label2_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(6, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(404, 15);
-            label2.TabIndex = 14;
-            label2.Text = "Upload your code below and click \"Send\" at the bottom when you're ready.";
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileOk += openFileDialog1_FileOk;
             // 
             // f_main
             // 
@@ -211,12 +251,11 @@
             ClientSize = new Size(816, 722);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            Controls.Add(richTextBox1);
+            Controls.Add(rt_response);
             Controls.Add(tabControl1);
             Controls.Add(l_Status);
             Controls.Add(l_statusDesc);
             Controls.Add(l_topDesc);
-            Controls.Add(b_Stop);
             Controls.Add(b_Send);
             Controls.Add(b_Clear);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -245,10 +284,15 @@
         private TabControl tabControl1;
         private TabPage codeAnalyzer;
         private TabPage askGlobie;
-        private RichTextBox richTextBox1;
+        private RichTextBox rt_response;
         private Label label1;
-        private RichTextBox richTextBox2;
+        private RichTextBox rt_askGlobey;
         private Label l_codeAnalyzerTop;
-        private Label label2;
+        private Label l_fileChooser;
+        private Button button2;
+        private Button b_fileChooser;
+        private TextBox tb_fileURL;
+        private Label l_askGlobeyTop;
+        private OpenFileDialog openFileDialog1;
     }
 }
