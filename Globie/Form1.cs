@@ -46,5 +46,22 @@ namespace Globie
         {
 
         }
+
+        private void b_Clear_Click(object sender, EventArgs e)
+        {
+            int selectedIndex = tabControl1.SelectedIndex;
+            if (MessageBox.Show("Sure to clear?", "Clear Response", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (selectedIndex == 0)
+                {
+                    rt_response.Clear();
+                }
+                else if (selectedIndex == 1)
+                {
+                    rt_response.Clear();
+                    rt_askGlobey.Clear();
+                }
+            }
+        }
     }
 }
