@@ -63,5 +63,15 @@ namespace Globie
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void l_codeAnalyzerTop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
