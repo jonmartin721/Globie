@@ -1,3 +1,8 @@
+using OpenAI.GPT3.ObjectModels.RequestModels;
+using OpenAI.GPT3.ObjectModels;
+using System.Reflection.Metadata;
+
+
 namespace Globie
 {
     public partial class f_main : Form
@@ -69,6 +74,11 @@ namespace Globie
         private void l_codeAnalyzerTop_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void b_Send_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
