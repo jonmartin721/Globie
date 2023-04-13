@@ -72,6 +72,7 @@
             b_Send.TabIndex = 1;
             b_Send.Text = "Send";
             b_Send.UseVisualStyleBackColor = true;
+            b_Send.Click += b_Send_Click;
             // 
             // l_topDesc
             // 

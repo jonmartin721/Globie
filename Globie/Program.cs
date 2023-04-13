@@ -1,7 +1,9 @@
 using OpenAI.GPT3.Managers;
 using OpenAI.GPT3;
+using OpenAI;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
+using System.Configuration;
 
 namespace Globie
 {
@@ -19,17 +21,19 @@ namespace Globie
             Application.Run(new f_main());
         }
     }
-    public class AttachGPT{
-
-        IConfiguration configuration = new ConfigurationBuilder()
-               .AddJsonFile("secrets.json")
-               .Build();
-        string apiKey = configuration.GetValue<string>("ApiKey");
+    public class ChatGPT
+    {
+        private IConfiguration configuration;
 
         public OpenAIService OpenAIService { get; set; }
 
-        public AttachGPT()
+        public ChatGPT()
         {
+            IConfiguration configuration = new ConfigurationBuilder()
+               .AddJsonFile("secrets.json")
+               .Build();
+            string apiKey = configuration["OpenAIServiceOptions:ApiKey"];
+
             OpenAIService = new OpenAIService(new OpenAiOptions()
             {
                 ApiKey = apiKey

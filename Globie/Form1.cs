@@ -1,5 +1,6 @@
 using OpenAI.GPT3.ObjectModels.RequestModels;
 using OpenAI.GPT3.ObjectModels;
+using OpenAI.GPT3;
 using System.Reflection.Metadata;
 
 
@@ -76,9 +77,46 @@ namespace Globie
 
         }
 
-        private void b_Send_Click(object sender, EventArgs e)
+        private async void b_Send_Click(object sender, EventArgs e)
         {
-           
+            string error = "";
+            string chatResponse = "";
+            int selectedIndex = tabControl1.SelectedIndex;
+
+            if (selectedIndex == 1)
+            {
+                string question = rt_askGlobey.Text;
+
+                var chatGpt = new ChatGPT();
+
+                var completions = chatGpt.OpenAIService.Completions.CreateCompletionAsStream
+                                              (new CompletionCreateRequest()
+                                              {
+                                                  Prompt = question,
+                                                  Model = Models.Davinci,
+                                                  Temperature = 0.5F,
+                                                  MaxTokens = 100,
+                                                  N = 3
+                                              });
+
+                await foreach (var completion in completions)
+                {
+                    if (completion.Successful)
+                    {
+                        chatResponse += completion.Choices[0].Text;
+                    }
+                    else
+                    {
+                        if (completion.Error == null)
+                        {
+                            throw new Exception("Unknown Error");
+                        }
+                        error = ($"{completion.Error.Code}: {completion.Error.Message}");
+                    }
+                }
+            }
+            rt_response.Text = chatResponse;
         }
+
     }
 }
