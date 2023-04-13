@@ -79,7 +79,6 @@ namespace Globie
 
         private async void b_Send_Click(object sender, EventArgs e)
         {
-            string error = "";
             string chatResponse = "";
             int selectedIndex = tabControl1.SelectedIndex;
 
@@ -89,31 +88,34 @@ namespace Globie
 
                 var chatGpt = new ChatGPT();
 
-                var completions = chatGpt.OpenAIService.Completions.CreateCompletionAsStream
-                                              (new CompletionCreateRequest()
-                                              {
-                                                  Prompt = question,
-                                                  Model = Models.Davinci,
-                                                  Temperature = 0.5F,
-                                                  MaxTokens = 100,
-                                                  N = 3
-                                              });
+                var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", question) }),
+                                        Model = Models.ChatGpt3_5Turbo,
+                                        Temperature = 0.5F,
+                                        MaxTokens = 100,
+                                        N = 1
+                       });
 
-                await foreach (var completion in completions)
+
+                if(completionResult.Successful)
                 {
-                    if (completion.Successful)
+                    foreach (var choice in completionResult.Choices)
                     {
-                        chatResponse += completion.Choices[0].Text;
-                    }
-                    else
-                    {
-                        if (completion.Error == null)
-                        {
-                            throw new Exception("Unknown Error");
-                        }
-                        error = ($"{completion.Error.Code}: {completion.Error.Message}");
+                        chatResponse += choice.Message.Content;
                     }
                 }
+                else
+                {
+                    if (completionResult.Error == null)
+                    {
+                        throw new Exception("Unknown Error");
+                    }
+                    chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
+                }
+
             }
             rt_response.Text = chatResponse;
         }
