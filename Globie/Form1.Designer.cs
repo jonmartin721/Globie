@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_main));
             b_Clear = new Button();
             b_Send = new Button();
             l_topDesc = new Label();
@@ -39,7 +38,6 @@
             codeAnalyzer = new TabPage();
             l_fileChooser = new Label();
             button2 = new Button();
-            b_fileChooser = new Button();
             tb_fileURL = new TextBox();
             l_codeAnalyzerTop = new Label();
             askGlobie = new TabPage();
@@ -134,7 +132,6 @@
             // 
             codeAnalyzer.Controls.Add(l_fileChooser);
             codeAnalyzer.Controls.Add(button2);
-            codeAnalyzer.Controls.Add(b_fileChooser);
             codeAnalyzer.Controls.Add(tb_fileURL);
             codeAnalyzer.Controls.Add(l_codeAnalyzerTop);
             codeAnalyzer.Location = new Point(4, 24);
@@ -164,19 +161,9 @@
             button2.Text = "Browse...";
             button2.UseVisualStyleBackColor = true;
             // 
-            // b_fileChooser
-            // 
-            b_fileChooser.Image = (Image)resources.GetObject("b_fileChooser.Image");
-            b_fileChooser.Location = new Point(6, 67);
-            b_fileChooser.Name = "b_fileChooser";
-            b_fileChooser.Size = new Size(27, 23);
-            b_fileChooser.TabIndex = 15;
-            b_fileChooser.Text = "button1";
-            b_fileChooser.UseVisualStyleBackColor = true;
-            // 
             // tb_fileURL
             // 
-            tb_fileURL.Location = new Point(39, 68);
+            tb_fileURL.Location = new Point(6, 67);
             tb_fileURL.Name = "tb_fileURL";
             tb_fileURL.Size = new Size(404, 23);
             tb_fileURL.TabIndex = 14;
@@ -290,7 +277,6 @@
         private Label l_codeAnalyzerTop;
         private Label l_fileChooser;
         private Button button2;
-        private Button b_fileChooser;
         private TextBox tb_fileURL;
         private Label l_askGlobeyTop;
         private OpenFileDialog openFileDialog1;
