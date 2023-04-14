@@ -55,6 +55,7 @@ namespace Globie
 
         private async void askGlobie_ClickAsync(object sender, EventArgs e)
         {
+            rt_response.Clear();
 
         }
 
