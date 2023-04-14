@@ -4,6 +4,7 @@ using OpenAI;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace Globie
 {
@@ -23,7 +24,7 @@ namespace Globie
     }
     public class ChatGPT
     {
-        private IConfiguration configuration;
+        //private IConfiguration configuration;
 
         public OpenAIService OpenAIService { get; set; }
 
@@ -41,5 +42,28 @@ namespace Globie
         }
 
     }
+
+
+    public class codeFile
+    {
+        string codeText;
+        string url;
+        Boolean fileReadSuccess = false;
+
+        public codeFile()
+        {
+            fileReadSuccess = false;
+            codeText = string.Empty;
+            url = string.Empty; 
+        }
+
+
+        public string Url { get => url; set => url = value; }
+        public string CodeText { get => codeText; set => codeText = value; }
+        public bool FileReadSuccess { get => fileReadSuccess; set => fileReadSuccess = value; }
+    }
+
+
+
 }
 

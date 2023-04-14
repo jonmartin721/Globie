@@ -45,7 +45,7 @@
             l_askGlobeyTop = new Label();
             rt_askGlobey = new RichTextBox();
             rt_response = new RichTextBox();
-            label1 = new Label();
+            l_response = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             codeAnalyzer.SuspendLayout();
@@ -219,20 +219,20 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(18, 411);
-            label1.Name = "label1";
-            label1.Size = new Size(70, 19);
-            label1.TabIndex = 12;
-            label1.Text = "Response:";
+            l_response.AutoSize = true;
+            l_response.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            l_response.Location = new Point(18, 411);
+            l_response.Name = "label1";
+            l_response.Size = new Size(70, 19);
+            l_response.TabIndex = 12;
+            l_response.Text = "Response:";
             // 
             // f_main
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(816, 722);
             Controls.Add(pictureBox1);
-            Controls.Add(label1);
+            Controls.Add(l_response);
             Controls.Add(rt_response);
             Controls.Add(tabControl1);
             Controls.Add(l_Status);
@@ -257,7 +257,6 @@
 
         private Button b_Clear;
         private Button b_Send;
-        private Button b_Stop;
         private Label l_topDesc;
         private PictureBox pictureBox1;
         private Label l_statusDesc;
@@ -265,7 +264,7 @@
         private TabControl tabControl1;
         private TabPage askGlobey;
         private RichTextBox rt_response;
-        private Label label1;
+        private Label l_response;
         private Label l_askGlobeyTop;
         private RichTextBox rt_askGlobey;
         private TabPage codeAnalyzer;

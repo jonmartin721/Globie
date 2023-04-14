@@ -2,18 +2,21 @@ using OpenAI.GPT3.ObjectModels.RequestModels;
 using OpenAI.GPT3.ObjectModels;
 using OpenAI.GPT3;
 using System.Reflection.Metadata;
-
+using System.Text.RegularExpressions;
 
 namespace Globie
 {
+
     public partial class f_main : Form
     {
+        codeFile file = new codeFile();
+
         public f_main()
         {
             InitializeComponent();
             this.Icon = Properties.Resources.Globey;
 
-            if (l_Status.Text != "Ready!")
+            if (!l_Status.Text.Equals("Ready!"))
             {
                 rt_askGlobey.Enabled = false;
                 codeAnalyzer.Enabled = false;
@@ -29,7 +32,7 @@ namespace Globie
             l_Status.ForeColor = Color.Green;
             rt_response.ReadOnly = true;
 
-            if (l_Status.Text == "Ready!")
+            if (l_Status.Text.Equals("Ready!"))
             {
                 rt_askGlobey.Enabled = true;
                 codeAnalyzer.Enabled = true;
@@ -42,17 +45,7 @@ namespace Globie
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -62,23 +55,9 @@ namespace Globie
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void f_main_Load(object sender, EventArgs e)
         {
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-
         }
 
         private void b_Clear_Click(object sender, EventArgs e)
@@ -87,6 +66,7 @@ namespace Globie
             if (selectedIndex == 0)
             {
                 rt_response.Clear();
+                tb_fileURL.Clear();
             }
             else if (selectedIndex == 1)
             {
@@ -104,12 +84,23 @@ namespace Globie
 
             if (result == DialogResult.OK)
             {
-                string fileName = browseDialog.FileName;
-                tb_fileURL.Text = fileName;
+                file.Url= browseDialog.FileName;
+
+                    try
+                    {
+                        file.CodeText = Regex.Replace(File.ReadAllText(file.Url), @"[\n\r\t]", " ");
+                    }
+                    catch
+                     (Exception ex)
+                    {
+                        MessageBox.Show("Error reading file: " + ex.Message);
+                        file.FileReadSuccess = false;
+                    }
+
+                        file.FileReadSuccess = true;
+
+                if (file.FileReadSuccess ){ tb_fileURL.Text = file.Url; }
             }
-
-
-
 
         }
 
@@ -135,7 +126,7 @@ namespace Globie
                            Messages = new List<ChatMessage>(new ChatMessage[]
                                     { new ChatMessage("user", question) }),
                            Model = Models.ChatGpt3_5Turbo,
-                           Temperature = 0.5F,
+                           Temperature = 0.4F,
                            MaxTokens = 1000,
                            N = 1
                        });
@@ -158,6 +149,42 @@ namespace Globie
                 }
 
             }
+
+            if (selectedIndex == 0)
+            {
+                string question = "Analyze this code for me and tell me about any problems: " + file.CodeText;
+                var chatGpt = new ChatGPT();
+
+                var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", question) }),
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.4F,
+                           MaxTokens = 1000,
+                           N = 1
+                       });
+
+
+                if (completionResult.Successful)
+                {
+                    foreach (var choice in completionResult.Choices)
+                    {
+                        chatResponse += choice.Message.Content;
+                    }
+                }
+                else
+                {
+                    if (completionResult.Error == null)
+                    {
+                        throw new Exception("Unknown Error");
+                    }
+                    chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
+                }
+
+            }
+
             rt_response.Text = chatResponse;
         }
 
