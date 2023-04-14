@@ -11,6 +11,10 @@ namespace Globie
         public f_main()
         {
             InitializeComponent();
+            l_Status.Visible = true;
+            l_Status.Text = "Ready!";
+            l_Status.ForeColor = Color.Green;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,10 +44,9 @@ namespace Globie
 
         private void f_main_Load(object sender, EventArgs e)
         {
-
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -69,6 +72,19 @@ namespace Globie
 
         private void button2_Click(object sender, EventArgs e)
         {
+            OpenFileDialog browseDialog = new OpenFileDialog();
+            browseDialog.InitialDirectory = "c:\\";
+            browseDialog.Filter = "CBL File (*.cbl)|*.CBL|All files (*.*)|*.*";
+            DialogResult result = browseDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string fileName = browseDialog.FileName;
+                tb_fileURL.Text = fileName;
+            }
+
+
+
 
         }
 

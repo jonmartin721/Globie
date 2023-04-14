@@ -37,7 +37,7 @@
             tabControl1 = new TabControl();
             codeAnalyzer = new TabPage();
             l_fileChooser = new Label();
-            button2 = new Button();
+            b_browseFile = new Button();
             tb_fileURL = new TextBox();
             l_codeAnalyzerTop = new Label();
             askGlobey = new TabPage();
@@ -80,9 +80,9 @@
             l_topDesc.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             l_topDesc.Location = new Point(14, 9);
             l_topDesc.Name = "l_topDesc";
-            l_topDesc.Size = new Size(306, 60);
+            l_topDesc.Size = new Size(306, 90);
             l_topDesc.TabIndex = 4;
-            l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to select \r\n";
+            l_topDesc.Text = "Hi, I'm Globey! \r\n\r\nYou can ask me questions about Global Shop, or upload\r\ncode files for me to analyze. Use the tabs below to select \r\na mode and I'll do everything I can to help!\r\n\r\n";
             // 
             // pictureBox1
             // 
@@ -108,19 +108,20 @@
             // 
             l_Status.AutoSize = true;
             l_Status.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            l_Status.Location = new Point(81, 690);
+            l_Status.Location = new Point(82, 690);
             l_Status.Name = "l_Status";
             l_Status.Size = new Size(97, 20);
             l_Status.TabIndex = 9;
             l_Status.Text = "CurrentStatus";
             l_Status.Visible = false;
+            l_Status.Click += l_Status_Click;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(codeAnalyzer);
             tabControl1.Controls.Add(askGlobey);
             tabControl1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tabControl1.Location = new Point(14, 187);
+            tabControl1.Location = new Point(14, 188);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(791, 207);
@@ -129,7 +130,7 @@
             // codeAnalyzer
             // 
             codeAnalyzer.Controls.Add(l_fileChooser);
-            codeAnalyzer.Controls.Add(button2);
+            codeAnalyzer.Controls.Add(b_browseFile);
             codeAnalyzer.Controls.Add(tb_fileURL);
             codeAnalyzer.Controls.Add(l_codeAnalyzerTop);
             codeAnalyzer.Location = new Point(4, 24);
@@ -150,15 +151,15 @@
             l_fileChooser.TabIndex = 17;
             l_fileChooser.Text = "Code File:";
             // 
-            // button2
+            // b_browseFile
             // 
-            button2.Location = new Point(6, 96);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 16;
-            button2.Text = "Browse...";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            b_browseFile.Location = new Point(6, 96);
+            b_browseFile.Name = "b_browseFile";
+            b_browseFile.Size = new Size(75, 23);
+            b_browseFile.TabIndex = 16;
+            b_browseFile.Text = "Browse...";
+            b_browseFile.UseVisualStyleBackColor = true;
+            b_browseFile.Click += button2_Click;
             // 
             // tb_fileURL
             // 
@@ -268,7 +269,7 @@
         private RichTextBox rt_askGlobey;
         private TabPage codeAnalyzer;
         private Label l_fileChooser;
-        private Button button2;
+        private Button b_browseFile;
         private TextBox tb_fileURL;
         private Label l_codeAnalyzerTop;
     }
