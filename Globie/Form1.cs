@@ -11,10 +11,33 @@ namespace Globie
         public f_main()
         {
             InitializeComponent();
-            this.Icon = Properties.Resources.Globey;
-            l_Status.Text = "Ready";
+            if (l_Status.Text != "Ready!")
+            {
+                rt_askGlobey.Enabled = false;
+                codeAnalyzer.Enabled = false;
+            }
+            else
+            {
+                rt_askGlobey.Enabled = true;
+                codeAnalyzer.Enabled = true;
+            }
+
             l_Status.Visible = true;
+            l_Status.Text = "Ready!";
             l_Status.ForeColor = Color.Green;
+            rt_response.ReadOnly = true;
+
+            if (l_Status.Text == "Ready!")
+            {
+                rt_askGlobey.Enabled = true;
+                codeAnalyzer.Enabled = true;
+            }
+            else
+            {
+                rt_askGlobey.Enabled = false;
+                codeAnalyzer.Enabled = false;
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,10 +67,9 @@ namespace Globie
 
         private void f_main_Load(object sender, EventArgs e)
         {
-
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -73,15 +95,17 @@ namespace Globie
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Code Files (*.*)|*.*";
+            OpenFileDialog browseDialog = new OpenFileDialog();
+            browseDialog.InitialDirectory = "c:\\";
+            browseDialog.Filter = "CBL File (*.cbl)|*.CBL|All files (*.*)|*.*";
+            DialogResult result = browseDialog.ShowDialog();
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
-                string selectedFile = openFileDialog1.FileName;
-                tb_fileURL.Text = selectedFile;
-                // Do something with the selected file
+                string fileName = browseDialog.FileName;
+                tb_fileURL.Text = fileName;
             }
+
 
 
 
@@ -110,7 +134,7 @@ namespace Globie
                                     { new ChatMessage("user", question) }),
                            Model = Models.ChatGpt3_5Turbo,
                            Temperature = 0.5F,
-                           MaxTokens = 100,
+                           MaxTokens = 1000,
                            N = 1
                        });
 
@@ -135,5 +159,9 @@ namespace Globie
             rt_response.Text = chatResponse;
         }
 
+        private void rt_response_TextChanged(object sender, EventArgs e)
+        {
+            rt_response.ReadOnly = true;
+        }
     }
 }
