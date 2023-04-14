@@ -114,6 +114,8 @@ namespace Globie
 
         private async void b_Send_Click(object sender, EventArgs e)
         {
+            rt_response.Clear();
+
             l_Status.Text = "Waiting on Globey...";
             l_Status.ForeColor = Color.Fuchsia;
             b_Send.Enabled = false;
@@ -260,6 +262,8 @@ namespace Globie
 
                 }
 
+
+                }
                 if (selectedIndex == 0)
                 {
                     string question = "Analyze this code, tell me about any problems along with a summary of what it does: " + file.CodeText;
@@ -277,22 +281,20 @@ namespace Globie
                            });
 
 
-                    if (completionResult.Successful)
+                if (completionResult.Successful)
+                {
+                    foreach (var choice in completionResult.Choices)
                     {
-                        foreach (var choice in completionResult.Choices)
-                        {
-                            chatResponse += choice.Message.Content;
-                        }
+                        chatResponse += choice.Message.Content;
                     }
-                    else
+                }
+                else
+                {
+                    if (completionResult.Error == null)
                     {
-                        if (completionResult.Error == null)
-                        {
-                            throw new Exception("Unknown Error");
-                        }
-                        chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
+                        throw new Exception("Unknown Error");
                     }
-
+                    chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
                 }
             }
 
