@@ -154,7 +154,7 @@ namespace Globie
                     }
                     chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
                 }
-
+          
             }
             rt_response.Text = chatResponse;
         }
