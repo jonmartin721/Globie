@@ -11,9 +11,32 @@ namespace Globie
         public f_main()
         {
             InitializeComponent();
+            if (l_Status.Text != "Ready!")
+            {
+                rt_askGlobey.Enabled = false;
+                codeAnalyzer.Enabled = false;
+            }
+            else
+            {
+                rt_askGlobey.Enabled = true;
+                codeAnalyzer.Enabled = true;
+            }
+
             l_Status.Visible = true;
             l_Status.Text = "Ready!";
             l_Status.ForeColor = Color.Green;
+            rt_response.ReadOnly = true;
+
+            if (l_Status.Text == "Ready!")
+            {
+                rt_askGlobey.Enabled = true;
+                codeAnalyzer.Enabled = true;
+            }
+            else
+            {
+                rt_askGlobey.Enabled = false;
+                codeAnalyzer.Enabled = false;
+            }
 
         }
 
@@ -109,14 +132,14 @@ namespace Globie
                        {
                            Messages = new List<ChatMessage>(new ChatMessage[]
                                     { new ChatMessage("user", question) }),
-                                        Model = Models.ChatGpt3_5Turbo,
-                                        Temperature = 0.5F,
-                                        MaxTokens = 10000,
-                                        N = 1
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.5F,
+                           MaxTokens = 1000,
+                           N = 1
                        });
 
 
-                if(completionResult.Successful)
+                if (completionResult.Successful)
                 {
                     foreach (var choice in completionResult.Choices)
                     {
@@ -136,5 +159,9 @@ namespace Globie
             rt_response.Text = chatResponse;
         }
 
+        private void rt_response_TextChanged(object sender, EventArgs e)
+        {
+            rt_response.ReadOnly = true;
+        }
     }
 }
