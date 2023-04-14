@@ -210,7 +210,7 @@
             // 
             // rt_response
             // 
-            rt_response.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            rt_response.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             rt_response.Location = new Point(14, 440);
             rt_response.Name = "rt_response";
             rt_response.Size = new Size(787, 230);

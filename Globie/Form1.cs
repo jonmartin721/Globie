@@ -125,13 +125,31 @@ namespace Globie
 
                 if (rt_askGlobey.Text.Contains("best CEO"))
                 {
+                    l_Status.Text = "Waiting on Globey...";
+                    l_Status.ForeColor = Color.Fuchsia;
+                    b_Send.Enabled = false;
+
                     System.Threading.Thread.Sleep(2000);
                     chatResponse = Properties.Resources.dustyInitial.ToString();
-                } else if (rt_askGlobey.Text.Contains("summarize")) {
-                    chatResponse = "Dusty Alexander is the best CEO!";
-                    System.Threading.Thread.Sleep(1000);
+                    l_Status.Text = "Ready!";
+                    l_Status.ForeColor = Color.Green;
+                    b_Send.Enabled = true;
 
-                } else if (rt_askGlobey.Text.Contains("bad debt"))
+                }
+                else if (rt_askGlobey.Text.Contains("summarize"))
+                {
+                    l_Status.Text = "Waiting on Globey...";
+                    l_Status.ForeColor = Color.Fuchsia;
+                    b_Send.Enabled = false;
+
+                    System.Threading.Thread.Sleep(1000);
+                    chatResponse = "Dusty Alexander is the best CEO!";
+                    l_Status.Text = "Ready!";
+                    l_Status.ForeColor = Color.Green;
+                    b_Send.Enabled = true;
+
+                }
+                else if (rt_askGlobey.Text.Contains("bad debt"))
                 {
                     preppedTraining = Properties.Resources.AR_WriteOffBadDebt_PDF.ToString();
                     preppedTraining += "Can you summarize the above along with my question step by step: ";
@@ -204,8 +222,9 @@ namespace Globie
                     }
 
                 }
-                else { 
-                
+                else
+                {
+
                     string question = rt_askGlobey.Text;
 
                     var chatGpt = new ChatGPT();
