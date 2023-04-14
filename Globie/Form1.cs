@@ -2,7 +2,7 @@ using OpenAI.GPT3.ObjectModels.RequestModels;
 using OpenAI.GPT3.ObjectModels;
 using OpenAI.GPT3;
 using System.Reflection.Metadata;
-
+using OpenAI.GPT3.Interfaces;
 
 namespace Globie
 {
