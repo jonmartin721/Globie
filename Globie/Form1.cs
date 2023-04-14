@@ -54,70 +54,71 @@ namespace Globie
         private async void askGlobie_ClickAsync(object sender, EventArgs e)
         {
 
-            if (tb_fileURL.)
-            l_Status.Text = "Training on AP + AR...";
-            l_Status.ForeColor = Color.Blue;
-            b_Send.Enabled = false;
+            if (tabControl1.SelectedIndex == 1)
+            {
+                l_Status.Text = "Training on AP + AR...";
+                l_Status.ForeColor = Color.Blue;
+                b_Send.Enabled = false;
 
-            string preppedTraining = Properties.Resources.AP_AddInvtoCCVend.ToString();
+                string preppedTraining = Properties.Resources.AP_AddInvtoCCVend.ToString();
 
-            var chatGpt = new ChatGPT();
+                var chatGpt = new ChatGPT();
 
-            var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                   (new ChatCompletionCreateRequest()
-                   {
-                       Messages = new List<ChatMessage>(new ChatMessage[]
-                                { new ChatMessage("user", preppedTraining) }),
-                       Model = Models.ChatGpt3_5Turbo,
-                       Temperature = 0.4F,
-                       MaxTokens = 1000,
-                       N = 1
-                   });
+                var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", preppedTraining) }),
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.4F,
+                           MaxTokens = 1000,
+                           N = 1
+                       });
 
-            preppedTraining = Properties.Resources.AP_SelectDeselect_HELP.ToString();
-            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                   (new ChatCompletionCreateRequest()
-                   {
-                       Messages = new List<ChatMessage>(new ChatMessage[]
-                                { new ChatMessage("user", preppedTraining) }),
-                       Model = Models.ChatGpt3_5Turbo,
-                       Temperature = 0.4F,
-                       MaxTokens = 1000,
-                       N = 1
-                   });
+                preppedTraining = Properties.Resources.AP_SelectDeselect_HELP.ToString();
+                completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", preppedTraining) }),
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.4F,
+                           MaxTokens = 1000,
+                           N = 1
+                       });
 
-            preppedTraining = Properties.Resources.AR_WriteOffBadDebt_PDF.ToString();
-            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                   (new ChatCompletionCreateRequest()
-                   {
-                       Messages = new List<ChatMessage>(new ChatMessage[]
-                                { new ChatMessage("user", preppedTraining) }),
-                       Model = Models.ChatGpt3_5Turbo,
-                       Temperature = 0.4F,
-                       MaxTokens = 1000,
-                       N = 1
-                   });
-            
-            preppedTraining = Properties.Resources.AR_TRANSACTIONS_HELP.ToString();
-            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                   (new ChatCompletionCreateRequest()
-                   {
-                       Messages = new List<ChatMessage>(new ChatMessage[]
-                                { new ChatMessage("user", preppedTraining) }),
-                       Model = Models.ChatGpt3_5Turbo,
-                       Temperature = 0.4F,
-                       MaxTokens = 1000,
-                       N = 1
-                   });
+                preppedTraining = Properties.Resources.AR_WriteOffBadDebt_PDF.ToString();
+                completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", preppedTraining) }),
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.4F,
+                           MaxTokens = 1000,
+                           N = 1
+                       });
+
+                preppedTraining = Properties.Resources.AR_TRANSACTIONS_HELP.ToString();
+                completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                       (new ChatCompletionCreateRequest()
+                       {
+                           Messages = new List<ChatMessage>(new ChatMessage[]
+                                    { new ChatMessage("user", preppedTraining) }),
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.4F,
+                           MaxTokens = 1000,
+                           N = 1
+                       });
 
 
-            rt_response.Text = "I'm trained and ready to answer your questions as accurately as possible!";
-            l_Status.Text = "Ready!";
-            l_Status.ForeColor = Color.Green;
-            b_Send.Enabled = true;
+                rt_response.Text = "I'm trained and ready to answer your questions as accurately as possible!";
+                l_Status.Text = "Ready!";
+                l_Status.ForeColor = Color.Green;
+                b_Send.Enabled = true;
 
+            }
         }
-
 
         private void f_main_Load(object sender, EventArgs e)
         {
