@@ -50,14 +50,14 @@ namespace Globie
 
         }
 
-        private async Task askGlobie_ClickAsync(object sender, EventArgs e)
+        private async void askGlobie_ClickAsync(object sender, EventArgs e)
         {
 
             l_Status.Text = "Training on AP & AR...";
             l_Status.ForeColor = Color.Blue;
             b_Send.Enabled = false;
-            
-            string preppedTraining = File.ReadAllText(Properties.Resources.AP___AR_MiniTraining);
+
+            string preppedTraining = Properties.Resources.AP___AR_MiniTraining;
             string chatResponse = "";
 
             var chatGpt = new ChatGPT();
