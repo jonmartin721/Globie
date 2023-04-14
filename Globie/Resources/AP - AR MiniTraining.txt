@@ -1,0 +1,817 @@
+How do I add an invoice to credit card vendor ? 
+
+Invoices can be added to credit card vendors just like any other vendor using Accounts Payable > Transactions > AP Batch Entry > New. Or invoices can be added directly in the  Select/Deselect for Payment menu item.  
+
+To add invoices directly from the Select/Deselect for Payment menu item. These would be the steps: 
+
+1. AP > Transactions > Select/Deselect Invoice for Payment
+2. Select credit card vendor and click OK
+3. Click the Add button
+
+4. To add an invoice already recorded on another vendor, Select Vendor No. whose invoices were paid by the credit card vendor.
+5. Select the vendor's invoice.
+6. Enter the Amount Paid by Credit Card. The amount from the invoice defaults but can be altered.
+7. Click Save to add the invoice to the grid.
+
+Note: Vendors and invoices on pay hold cannot be selected. If the invoice was paid by multiple credit cards, enter only the amount paid by this credit card. The remaining invoice balance can be paid through other credit card vendors.
+
+8.To remove a selected invoice, double-click the invoice in the grid to make it active and click Delete. 
+9.Upon exit, a message appears to confirm invoice additions since the invoice amounts paid by credit card are automatically removed from the original vendor and moved to the credit card vendor.
+Note: Invoices moved to the credit card vendor cannot be moved back to the original vendor. If invoices are moved in error, it would need to be adjusted off the credit card vendor and reentered for the original vendor.
+
+
+From this screen you can enter new invoices for the credit card vendor not already entered on a vendor account (i.e. miscellaneous charges, etc.). These would be the following steps: 
+1. click on the New button.
+2. Click OK
+3. Enter invoice information
+4. Click Save, then Exit.
+5. Add New invoices as needed, then X out when done
+6. Click on the Post button to post new invoices.
+7. Print report
+8. Type Y in Pay column to pay the new invoice.
+9. Click the arrow buttons to choose invoices from other vendors or Save if finished.
+10. Continue with the check run process as usual
+
+Use this menu item to select or deselect vendor invoices to pay in Accounts Payable > Transactions > Checks and Registers.    
+
+After selecting invoices to pay, the remaining steps to complete the check run are first to Prepare Check Proofing and then Checks and Registers.
+
+Accounts Payable > Transactions > Select/Deselect Invoices for Payment
+
+Use this screen to narrow invoices to select for payment based on currency, date range, vendor, and a User 1 field or to quickly select or deselect all invoices based on the criteria entered.  
+
+
+
+Currency. The currency defaults to the company' s Currency code. Select the appropriate currency for the check run from the list of available currencies as established through Maintain Active Currencies. Separate check runs are required for different currencies. Only those vendors with the matching currency code are available to select invoices for payment.
+Note: After the currency is entered, no other entries are necessary on this first screen.
+
+From Date/To Date. Enter a date range to select individual invoices to pay on the subsequent screen(s). Only those invoices with due dates that fall within the date range are available for selection.
+Note: If a date range is not entered, the system assumes a wide date range to basically encompass all invoices. Therefore, a range of 01/01/1980 - 12/31/2099 is displayed.
+
+Pay All Invoices. Select to mark all invoices for payment within the date range for all vendors with the matching currency.  
+
+Deselect All Invoices. Select to deselect previously selected invoices within the date range and currency.
+
+Vendor No./Vendor Name.  A vendor record can be entered by selecting either the vendor number or vendor name thereby limiting the selected invoices to that one vendor.
+
+Pay All. Select to mark all invoices for payment for the specified vendor.
+
+Deselect All. Select to deselect all invoices for the specified vendor that were previously selected for payment.
+
+From Vendor User 1/To Vendor User 1. Enter values corresponding to the User 1 Field found on the Vendor Master > Options screen. These values are used to limit the vendors listed in the subsequent invoice selection screens.  
+
+Pay All. Select to mark all invoices to be paid for vendors containing the specified User 1 values.
+
+Deselect All. Select to deselect all invoices previously marked to be paid for vendors containing the specified User 1 values.
+
+Note: Selection options may be used in conjunction with each other. For example, if a date range and a vendor are entered and Pay All is selected, only those invoices that fall within the date range for the selected vendor will be marked for payment. However, no selection criteria has to be entered. Click Ok to proceed to the subsequent screen where the first vendor that has open invoices to be paid is listed. Scroll through vendors and mark invoices individually as needed.
+
+Display Estimated Totals for Gross, Discount, and Net. This option defaults as checked and causes accumulated totals to display on the subsequent screen for invoices selected for payment. Deselect if needed.
+
+Navigate through Screens in Vendor Name Order. Check this option to navigate through the vendors by vendor name instead of by vendor number on the subsequent screens.
+
+Select the Ok button to display the first of the vendors with open invoices in the Select Invoices for Payment screen. Use this screen to select or deselect invoices for payment and to verify the proper invoices are selected for payment.
+
+Select Invoices for Payment
+Hint: If invoices are not appearing correctly in this screen, run Rebuild Alternate Keys – Vendors to rebuild the vendor indexes.
+
+Currency. The currency defaults from the prior screen.
+
+From Date/To Date. The date range defaults from the prior screen.
+
+Vendor No./Vendor Name.  The vendor defaults from the prior screen or the first vendor meeting the criteria from the prior screen displays.
+
+Pay with INTL BACS ACH. This option is available and automatically selected if the vendor has International BACS information entered into their vendor master. If the Standard Accounts Payable ACH option to Require Approval of Vendor BACS Banking Information is checked, then the Pay with INTL BACS ACH option is only available if the vendor has Intl BACS information entered into their vendor master and they have been Approved. With this option checked, the invoices selected are processed electronically via International ACH. This option can be unchecked if an actual check needs to be printed for the vendor.
+Note: If some invoices need to be processed via International ACH and other invoices need an actual check printed for the same Intl BACS vendor, then separate check runs must be processed.
+
+Pay All Selected Invoices by BACS. This option is available if the option Pay with INTL BACS ACH is selected. This options marks all selected invoices to be paid via BACS.
+
+Pay with ACH. This option is available and automatically selected if the vendor has ACH information entered into their vendor master. If the Standard Accounts Payable option to Require Approval of Vendor ACH Banking Information is checked, then the Pay with ACH option is only available if the vendor has ACH information entered into their vendor master and they have been Approved. With this option checked, the invoices selected are processed electronically via ACH. This option can be unchecked if an actual check needs to be printed for the vendor.
+Note: If some invoices need to be processed via ACH and other invoices need an actual check printed for the same ACH vendor, then separate check runs need to be processed.
+
+Note: Right click in the grid and select Show Columns to display a Pay with ACH column in the grid.
+
+Pay All Selected Invoices by ACH. This option is available for selection if the option Pay with ACH is selected. This options marks all selected invoices to be paid via ACH.
+
+Pay All. This option is checked if it was checked on the prior screen for the vendor. If selected, all invoices for this vendor are marked to be paid. If not checked, checking it marks all invoices to be paid.  
+
+Deselect All.  This option is checked if it was checked on the prior screen for the vendor. If selected, no invoices for this vendor are marked to be paid. This option is cleared when an invoice for this vendor is marked to be paid.
+
+Credit Card/Type.  If the vendor selected is a credit card vendor, these fields display the credit card name and brand the vendor is associated with through Vendor Credit Card Maintenance.
+
+Exch Date/Exch Rate. If the vendor has a different currency code than the company' s default currency code, the most current exchange information displays from the data listed in Maintain Exchange Rates.
+
+User 1. This field defaults with the value from the User 1 Field on the Vendor Master > Options screen.
+
+Always Take Discount when check proofing or when checks are processed. This check box is checked for all vendors if the Standard Accounts Payable company option Always Take Discount is selected. Otherwise, it is only checked for vendors that have Always Take Discount selected within their Options screen in the Vendor master. This box serves as a notification for vendors where a discount is calculated when check proofing or when checks are processed, even if it is past the discount due date.
+
+Invoice Grid
+Unpaid invoices for the specified vendor display with the applicable invoice information.  
+
+Invoice Number. The invoice number associated with the payable amount.
+
+Invoice Date. The date the invoice was created.
+
+Due Date. The date the invoice is due to be paid.
+
+Invoice Amount. The outstanding payable amount on the invoice. This entry can be edited for credit card vendors.
+
+Invoice Amount. (Foreign currency) If applicable, this column displays the outstanding payable amount on the invoice in the vendor' s currency.
+
+Discount Amt. The amount of available discounts on an invoice.
+Note: Select the Standard Accounts Payable option Allow Discount Amount to be modified when Selecting Invoice for Payment to allow this field to be edited.
+
+Net Invoice. The Invoice Amount less the Discount Amount.
+
+Post. A Y in this column indicates that the invoice has been posted and can be selected to be paid.  
+
+Pay. This column is used to indicate whether the invoice is being paid. The available entries include:
+
+Y = Marks the invoice to be paid.
+
+N (or leave blank) = Marks the invoice to not be paid.
+
+P (or p) = Marks the invoice to be partially paid and displays this screen to enter the partial payment amount:
+
+
+
+Note:  Any discount associated with an invoice that is partially paid are not taken into account until the balance is paid in full.
+
+I (or i) = Displays an inquiry on the invoice and provides additional details:
+
+
+
+Screen Totals
+Total amounts display in the screen' s footer:
+
+Vendor Check Total. Displays the total to be paid to the vendor.
+
+Total Invoice. Displays the total invoice amount for all vendors.
+
+Total Discount. Displays the total discount amount for all vendors.
+
+Total Net. Equals the Total Invoice less the Total Discount and is the amount to be paid.
+
+The Total Invoice, Total Discount, and Total Net  fields calculate for all vendor invoices selected for payment if the Display Estimated Totals for Gross, Discount, and Net box was checked on the previous screen.
+
+Use the < (left arrow) or > (right arrow ) buttons to scroll through applicable vendors to review or select/deselect invoices.
+
+Click Save  to save invoice selections and exit.
+
+The Add and Post buttons are only available for credit card vendors and provide additional functionality.  
+
+Click Restart to not save any additional changes since the last save and to return to the previous screen to enter different search criteria.
+
+Note: To completely erase all selections and start over, on the prior screen enter a wide date range, check Deselect All Invoices, and click Ok.
+
+Credit Card Vendors
+Credit card vendors are set up in the Vendor Master.
+
+Adjusting Invoices
+When selecting which invoices to pay, the Invoice Amount for an invoice can be changed to account for differences between the amount charged and the actual amount listed on the credit card statement. Once an invoice is increased or decreased, the Create A/P Invoice Batch screen displays.
+
+
+
+Expense Account for Difference. Select a G/L expense account.
+
+G/L Post Date. Select the post date for the transaction.
+
+OR
+
+Select Existing Post Date. Select an existing post date. This allows for multiple invoice adjustments to be posted on the same dates.
+
+Click Ok to return to the prior screen and adjust more invoices if needed. Before adjusted invoices can be paid with the corrected amount.
+
+Click the Post button to post the change made to the invoice amounts. An audit trail prints. The Business Intelligence report name and ID for the audit trail are: AP_Journals.rpt, Report ID 309. Invoice adjustments are written back to the original vendor on the invoice and to the credit card vendor.
+Note: If the original invoice has already been purged, it is pulled from history back to open items.
+
+Adding Invoices
+Click the Add button to select additional invoices as paid or to add new invoices for the credit card vendor.
+
+
+
+Vendor No. Select a vendor whose invoices were paid by the credit card vendor.
+
+Invoice Number. Select the vendor' s invoice.
+
+Amount Paid by Credit Card. The amount from the invoice defaults, but can be altered.
+
+Click Save to add the invoice to the grid.
+
+Note: Vendors and invoices on pay hold cannot be selected. If the invoice was paid by multiple credit cards, enter only the amount paid by this credit card. The remaining invoice balance can be paid through other credit card vendors.
+
+To remove a selected invoice, double-click the invoice in the grid to make it active and click Delete. Upon exit, a message appears to confirm invoice additions since the invoice amounts paid by credit card are automatically removed from the original vendor and moved to the credit card vendor.
+
+Click the New button to enter new invoices for the credit card vendor that may or may not be tied to a vendor in the vendor master list (i.e. miscellaneous charges, etc.). The Create A/P Invoice Batch screen displays. After entering the Select/Deselect displays where batch information can be added. Enter and save as many new invoices needed for the post date. Upon exit, the new invoices are listed for the vendor in the grid marked with a Y in the New column.
+
+Upon exit back to the main select/deselect screen, the new invoices listed are not able to be paid until posted by clicking the Post button.   An audit trail prints for items posted.
+
+This menu item is used to enter accounts receivable batches. The four types available are: Cash, Invoice, Credit Memo, and Adjustment.
+
+ 
+
+Once batches are entered, select the X to exit. The batch(es) can be updated immediately through the Post Batches screen or at a later time through Update AR Batches.  An audit trail prints upon exiting.  Batches can be modified before update through Accounts Receivable > Transactions > AR Batches > Open.
+
+ 
+
+Note: The Business Intelligence version of the Accounts Receivable journal entry audit trail is AR_Journals.rpt, Report ID 572.
+
+ 
+
+Note: Batches that become locked and inaccessible are unlocked through GL Batches in Use.
+
+ 
+
+Accounts Receivable > Transactions > AR Batches > New
+
+ 
+
+The batch header screen displays for any Batch Type selected.
+
+AR-T-AR_Batches_Header
+
+ 
+
+Type.  The type displays the batch type selected from the prior screen.
+
+ 
+
+User ID. The User ID of the user that created the batch.
+
+ 
+
+Batch Number.  Enter a unique, five character, alphanumeric batch number.  The same batch number cannot be repeated in the same fiscal year.  This field automatically populates if the standard accounts receivable option Automatic Batch Numbering is on. The batch number begins with the letter R unless it has been changed from the default.
+
+ 
+
+Post Date.  The post date defaults to today's date.  Change the date if needed. Note:  The Post Date can be locked for Invoice and Credit Memo type batches by selecting the advanced Order Entry company option Use Current Date as Invoice Batch Date.
+
+ 
+
+Target. Enter a target total if applicable. This is the total dollar amount of items to be entered into the batch. This can be used as a safeguard to ensure all entries are made. The target field is required if the Standard Accounts Receivable option Require Input of Batch Target Amount is on. On most batch types, the customer number field is filled in with the word BATCH when the target total is reached.
+
+Note:  If entering negative items (i.e. negative invoices), the target amount should include the amount as a positive number (i.e. Invoice 1 at 25.00 and negative Invoice 2 at -25.00 would sum to a target amount of 50.00; signs are disregarded).
+
+Note: For Cash batches, enter the Target amount in the batch currency.
+
+Note: For Cash batches, the system does not include discounts for the accumulated total which is something to consider for the target amount.
+
+ 
+
+Accumulated Total. This field is an accumulated total of items entered into the batch and calculated by the system.  This field is compared to the Target field during batch input. Note: When the two fields equal, the system populates the Customer number field with the word BATCH and batch input is complete (except for Adjustment batches).
+
+ 
+
+Branch. This field applies only if branch accounting is used. Enter a branch indicator that applies to entries in this batch. The branch indicator can be changed for individual entries for non-branch companies.
+
+ 
+
+Click Ok to continue with entering a batch: Cash, Invoice, Credit Memo, Adjustment.
+
+ 
+
+Cash Receipt Batches
+ 
+
+Cash receipt batches are used to record the payment of invoices.
+
+ 
+
+Note: Cash receipts for factored invoices must be handled using Accounts Receivable > Transactions > Factor Cash Receipt.  An error occurs if the user tries to apply cash to a factored invoice using a regular cash receipt batch.
+
+ 
+
+AR-T-AR_batches-new-cash020
+
+ 
+
+Currency. Defaults to the company currency listed in the Currency field under Standard AR company options.  The currency can be changed if needed.
+
+Note: If the Standard Accounts Receivable option Allow Entering Payments in the Base/Company Currency is on, receipts for different currencies can be entered in the same batch if the base currency is selected. Otherwise, separate cash batches must be created for different currencies.
+
+ 
+
+GL Account. Defaults to the cash account for the currency listed under Cash Account Maintenance. The cash account can be changed but only to a valid cash account for the currency.
+
+ 
+
+GL Account Description. The description for the selected GL account.
+
+ 
+
+AR-T-AR_Batches_Cash_010
+
+ 
+
+Deposit ID - Seq. Each cash batch defaults with the Post Date entered and a sequence of 000 which is used for Bank Reconciliation purposes.  The Deposit ID – Seq may be changed if needed.
+
+ 
+
+The batch header information populates in the screen and is grayed out.
+
+ 
+
+Customer Number. Enter a customer number for this cash receipt or select from the look up. The Customer Name and City are retrieved from the customer master. The Currency defaults to the customer's order currency. If processing a miscellaneous cash batch, enter JE in the customer number field to create a journal entry that posts to the general ledger in the same cash batch as the typical customer cash receipts. 
+
+Note: If using target amounts, the customer number field is filled in with the word BATCH when the target total is reached.
+
+ 
+
+Customer Name. Select a customer name from the look up. The Customer Name and City are retrieved from the customer master. The Currency defaults to the customer's order currency.
+
+ 
+
+Invoice. Select the invoice number to pay if only one invoice is being paid.
+
+Note: If customer information has been previously entered, the invoices listed in the look up are filtered accordingly. Otherwise, the look up lists all open item invoices. If JE was entered in the Customer Number field, the Invoice field is not available because a miscellaneous cash receipt is not associated with a particular customer invoice.
+
+Important:  If multiple invoices are being paid with this customer's payment, leave the Invoice field blank and select the Multiple Credits (Invoices/Crd Memos) option to select multiple invoices and to apply credit memos if needed.
+
+ 
+
+Packing List. Select a packing list from the look up. Note: If the Standard Accounts Receivable company option, Use Shipment No as Packing List in Cash Receipt Batches is active, the packing list look up displays a combination of the sales order number/shipment sequence instead of the actual packing list number.
+
+ 
+
+Check or Reference Number. Enter a check or other reference number. Note:  If a check or reference number is not entered, the system inputs a sequential reference number starting with X001.
+
+ 
+
+Check Amount. The check amount defaults to the invoice total, but can be modified to account for discounts, etc. Note: If the customer has a different currency than the company's base currency, the second Check Amount field populates in the customer's currency. The company's check amount calculates based on the Exch Date and Exch Rate listed.
+
+Note: If the Standard Accounts Receivable option Allow Entering Payments in the Base/Company Currency is on and the batch is in the base currency, both of the Check Amount fields are available for entry. Modifying the amount for the base currency updates the customer amount by factoring the exchange rate. The customer amount can be modified without affecting the base amount to allow for rounding corrections.
+
+ 
+
+Exch Date and Exch Rate. For customers with a different currency than the company currency, the exchange date and exchange rate fields populate from Maintain Exchange Rates once the invoice is selected or an amount is entered. The exchange rate retrieved is the customer to company exchange rate. Note: If the Override Exchange Rates in Cash Receipts option is on, these fields may be modified.  The company check amount recalculates if the exchange rate is changed. The rate reflects the customer's currency to the company's currency and the symbols also display. Note: If the Standard Accounts Receivable option Allow Entering Payments in the Base/Company Currency is on, both of these fields are available for edit. Additionally, a label displays such as CAD TO USD which indicates the conversion of the customer currency to the base currency.
+
+ 
+
+Note: For partial payment cash receipts, if the Override Exchange Rates in Cash Receipts option is on, a variance is created by comparing the original company amount to the updated calculated company amount from the exchange rate. The last payment is determined and the variance is calculated using the original net amount from the company and comparing it to the updated calculated company amount. A payment is determined complete when no variance remains.
+
+ 
+
+Once all information is entered, select the appropriate option:
+
+Single Credit Entry. Choose this option when the cash receipt is for one invoice but a discount needs to be applied or to edit the debit account and enter single or multiple credit accounts. Note:  For this selection, the journal entry shows DEBIT as the invoice number for the debit line(s) when the batch is opened.  Take precaution not to delete all DEBIT lines with the Delete Invoice option; use Delete Line as necessary. This is the best option for recording a miscellaneous cash receipt transaction.
+
+Multiple Credits (Invoices/Crd Memos). Choose this option when the cash receipt is applied to multiple invoices and credit memos. Note:  For this selection, the journal entry shows DEBIT as the invoice number for the debit line(s) when the batch is opened. Take precaution not to delete all DEBIT lines with the Delete Invoice option; use Delete Line as necessary.
+
+Single Entry to Standard Accounts. Choose this option when the cash receipt is for one invoice "paid in full" and to automatically credit the default Accounts Receivable account under the Standard company options Accounts Receivable Tables > Account Maintenance – Accts Receivable and debit the default Cash account located in Cash Account Maintenance.
+
+ 
+
+ 
+
+Single Credit Entry
+
+ 
+
+Single Credit Entry. Choose this option when the cash receipt is for one invoice but a discount needs to be applied or to edit the debit account and enter single or multiple credit accounts. Enter the Check or Reference Number, the Invoice number, and the Check Amount. Select Ok to begin processing the cash receipt.
+
+AR-T-AR_batches-new-cash050
+
+ 
+
+ 
+
+A different GL Account for the credit entry from the look up can be selected, if necessary. Select Ok and the system displays:
+
+AR-T-AR_batches-new-cash060
+
+ 
+
+If the cash receipt amount is for the full invoice amount, the system defaults the Type to Y; if the cash receipt is for a partial payment the Type is P. If the customer is taking an allowable discount on the invoice according to the Terms of that invoice, although an amount less than the full invoice amount was entered, a Y is entered in the Type column and the system calculates and return the corresponding Apply Amt and Discount.
+
+ 
+
+Even with a P in the Type column, a discount amount can be entered if the customer is taking a discount that the system would not recognize as allowable (being past the allowable date according to the Terms of the invoice), but a company decision was made to allow the discount. Note: If the Type column was a P, after the amount of the discount is manually entered in the Discount column, the system changes the Type from P to Y.
+
+ 
+
+Check Discount Column Editable to enter discounts in the discount column. Changes cannot be made to the Discount column if this box is unselected.
+
+ 
+
+Modify the Apply Amount and Discount amount as necessary. The Balance column displays the balance remaining due on the invoice.
+
+ 
+
+VAT Applied. If the Create Offsetting Tax Journal Entries (AR) option is selected and the customer is set up with VAT, this column displays the amount to debit the VAT Output Liability (AR) account which offsets what was posted during invoicing. The same amount is credited against the Taxes Owed to the Government (AR) account to track the liability.
+
+ 
+
+If a change is made on the Multiple Credits screen (example: entered a discount), after selecting Ok the system opens the Enter Multiple Debits screen. If no changes were made on the Multiple Credits screen, the Single Debit or Multiple Debits prompt displays. If Single Debit was chosen, a screen appears that allows changing the default cash account. If Multiple Debits was chosen, the system displays:
+
+AR-T-AR_batches-new-cash070
+
+ 
+
+Edit the existing lines and/or enter the Amount and GL Account to debit and select Save. Continue entering amounts and accounts until the Total Debits are balanced to the Total Entered. Select Ok.
+
+ 
+
+After entering debits (single or multiple), the following screen appears for a review of the debit and credit entries for the transaction.
+
+AR-T-AR_batches-new-cash080
+
+ 
+
+Select Reject to cancel the Debit and Credit entries entered at this point. Select Modify to edit an entry. Select to modify Debits or Credits and click Ok. The system returns to the appropriate screen to adjust the amounts and accounts if necessary. When satisfied with the entry and the Total Debits equal the Total Credits, select Accept.
+
+ 
+
+The system returns to the Cash Receipts Batch Data screen where the user can enter additional cash receipts to the batch.
+
+ 
+
+Multiple Credits (Invoices/Credit Memos)
+
+ 
+
+Multiple Credits (Invoices/Crd Memos). Choose this option when the cash receipt is to be applied to multiple invoices and credit memos.
+
+ 
+
+Enter the Check or Ref Number.
+
+Note: Since the cash receipt is applied to multiple invoices/credit memos, the Invoice field should be left blank; invoices are selected on a subsequent screen.
+
+ 
+
+Enter the amount of the cash receipt in the Check Amt field. Select Ok to process the cash receipt.
+
+AR-T-AR_batches-new-cash050
+
+ 
+
+The system displays the default account to credit from the Standard company options Accounts Receivable Tables > Account Maintenance - Accts Receivable. Select a different GL Account if necessary. Select Save and the system displays:
+
+AR-T-AR_batches-new-cash110
+
+ 
+
+The system lists the unpaid invoices for the customer on screen. Invoices can be located by scrolling through the invoice list or selecting the invoice with the Invoice look up or the Packing List look up. If an entry is selected with one of the look ups, the system  jumps to the corresponding invoice. Note: The look ups list all invoices in the open items file whether they have been paid or not. Therefore, if an entry selected from a look up relates to an invoice that has already been paid, the system does not jump to that invoice because it is not listed on screen.
+
+ 
+
+Enter a Y in the Type column to include the full invoice amount and the system moves the invoice/credit memo amount to the Apply Amt column. If a customer is taking an allowable discount on an invoice according to the Terms of that invoice, a Y can be entered in the Type column and the system calculates and returns the corresponding Apply Amt and Discount.
+
+ 
+
+Enter a P in the Type column to make a partial payment toward an invoice. Even with a P in the Type column, a discount amount can be entered if the customer is taking a discount that the system would not recognize as allowable (being past the allowable date according to the Terms of the invoice), but a company decision was made to allow the discount. Note: If a P was entered in the Type field to allow a discount, the system changes the Type from P to Y after the amount of the discount is entered into the Discount column.
+
+ 
+
+Select the Add button to enter another Invoice to include in this transaction if needed.
+
+ 
+
+When all invoices are added and the Total Cash Received balances to the Total Entered, the system displays a Balanced message. Select Save to continue.
+
+ 
+
+At this point, the processing proceeds as described above for Single Credit Entry.
+
+ 
+
+ 
+
+Single Entry to Standard Accounts
+
+ 
+
+Single Entry to Standard Accounts. Choose this option when the cash receipt is for one invoice "paid in full" and to automatically credit the default Accounts Receivable account established in the Accounts Receivable Table Standard Options and debit the default Cash account established in Cash Account Maintenance.
+
+ 
+
+Enter the Check or Reference Number, the Invoice number, and the Check Amount. Select Ok to process the cash receipt. Since this entry debits and credits default accounts, no additional screens appear.
+
+ 
+
+Continue maintaining the cash receipts batch in this manner. If using target amounts, the customer number changes to BATCH when the target amount is reached. If not using a target amount, exit the batch at any time.
+
+ 
+
+Invoice Batches
+ 
+
+Invoice batches are used to enter an invoice directly into the system and are typically only used for startup.  In addition, this batch type does not allow an actual invoice to be printed.  Invoices are normally processed through Order Entry > Transactions > Invoicing.
+
+AR-T-AR_Batches_Invoice_010
+
+ 
+
+Customer.  Enter the customer or select the customer from either the customer number look up or the customer name look up. Note: If using target amounts, the customer number field is filled in with the word BATCH when the target total is reached
+
+ 
+
+Bill To Address.  The name and address defaults from the customer master Bill To Address section once a customer is selected.
+
+ 
+
+Currency.  The currency defaults from the customer master Currency field.
+
+ 
+
+Invoice Number.  Enter the invoice number; alphanumeric characters are allowed.
+
+ 
+
+Customer PO.  Enter the customer purchase order number if needed.  This field is informational only.
+
+ 
+
+Invoice Date.  The invoice date defaults to the Post Date; change the date if necessary.  This date determines how the invoice will be aged for payment and is also used to retrieve the correct exchange rate for this invoice if applicable. Note: The Invoice Date can be locked for Invoice and Credit Memo type batches by selecting the advanced Order Entry company option Use Current Date as Invoice Batch Date.
+
+ 
+
+Taxable.  Select this box if the invoice is taxable.  This field defaults to checked if the customer has a tax code entered under the Taxes button on the customer master.  It can be unchecked if needed.  Checking this box activates the related tax fields as well as the Taxes button on the invoice screen to view and/or modify tax information.
+
+ 
+
+VAT Rule.  This field is activated if the taxable checkbox is checked and the company option to Use VAT Features is on.  This field is used for VAT tax purposes.  A VAT Rule defaults if one is listed for the customer under the VAT button under customer options.  The rule may be changed if needed.
+
+ 
+
+VAT Exempt.  This field is informational only and is populated if the VAT Rule selected is VAT exempt.
+
+ 
+
+Cost.  Enter the cost associated with the order if needed (i.e. cost of inventory). This field is informational only and does not carry over to the open items record.
+
+ 
+
+Exchange Fields:
+
+ 
+
+The system uses these fields for calculations if the customer has a different currency code than the company's currency code.
+
+ 
+
+Exchange Date.  Based on the invoice date, the system uses the most recent exchange date information from the Maintain Exchange Rates table to process currency calculations. The exchange date used is displayed and cannot be changed.
+
+ 
+
+Exchange Rate. The exchange rate used is based on the exchange date and cannot be modified.
+
+ 
+
+Invoice Amount Information:
+
+ 
+
+The system calculates an additional row of invoice information based on the exchange date/rate for customers that have a different currency code than the company's currency code. The invoice amount can be entered into either row.
+
+ 
+
+Invoice Amount.  Enter the amount of the invoice.
+
+ 
+
+Amount To Tax.  If the invoice is taxable, the amount subject to tax defaults from the invoice amount, but can be changed if a portion of the invoice is not taxable.
+
+ 
+
+Tax. If the invoice is taxable, the system calculates the tax based on the tax codes listed for the customer under the Taxes button on the customer master and the Amount To Tax field and cannot be modified from this field. To see details of the calculated tax amount and/or to change the tax codes to change the tax amount, click the Taxes button on screen.
+
+ 
+
+Retention.  Retention may be calculated depending on the retention method, any limitations, and if the invoice is taxable with VAT tax codes marked as VAT Retention Applies.  Click the Taxes button to see details of the calculated retention amount and/or to change the tax codes to change the retention amount.
+
+ 
+
+Taxable Amount. If the invoice is taxable, this amount represents the total invoice amount including any tax.
+
+ 
+
+Sales Rep.  The sales representative defaults from the Sales Rep field on the customer master, but may be changed for the invoice if needed.
+
+ 
+
+Branch.  The branch code defaults from the Branch field on the customer master, but may be changed for the invoice if needed.  For credit memo and adjustment batches, the branch code defaults to the code tied to the selected invoice. Note:  This field is not applicable for companies using branch processing.
+
+ 
+
+Area.  The area code defaults from the Area field on the customer master, but may be changed for the invoice if needed.
+
+ 
+
+State.  This field is informational only and is recorded with the invoice and carries over to certain screens (i.e. Accounts Receivable > File > Maintain Open AR).  In addition, some non-branch customers may use the state field (along with the branch and area fields) for grouping purposes.
+
+ 
+
+Discount Section:
+
+ 
+
+This section is used for due date and discount purposes. The discount is automatically calculated by the system on the invoice amount (excluding taxes) if the terms code entered for the invoice includes a discount percentage.  The discount is only calculated and is not posted at the time of entering the invoice. The discount applies and posts at the time of payment of the invoice if the invoice is paid by the discount due date.
+
+ 
+
+Override.  Typically the system calculates any applicable discount and recalculates for any freight charges entered.  If the override checkbox is checked, the system will not recalculate the discount based on freight charges.
+
+ 
+
+Freight.  This field is used to enter the amount of freight included in the invoice and the system will reduce the discount amount based on the freight.  This is to not allow a discount on freight charges. Note:  The freight charges entered are for discount purposes only and will not automatically post to a different general ledger account.
+
+ 
+
+Discount.  The discount is calculated by the system on the Invoice Amount and based on the Terms Code entered for the invoice and if that terms code involves a discount.  The discount amount may be manually overridden if needed.
+
+ 
+
+Terms Code.  The terms code defaults to the code listed in the Terms field on the customer master and is used to calculate the invoice due date and any discount amount and discount due date.  This code may be changed if needed and the system recalculates the invoice due date and any applicable discount amount and discount due date.
+
+ 
+
+Invoice Due Date.  The invoice due date is calculated based on the invoice date and the Terms Code entered for the invoice.
+
+ 
+
+Discount Due Date.  The discount due date is calculated based on the invoice date and the Terms Code entered for the invoice. The date defaults to today's date if a discount is not involved.
+
+ 
+
+Select one of the following:
+
+ 
+
+Single Debit Entry.  This option is used to override the single default debit account; the Accounts Receivable account from company options.  In addition, this option allows for overriding the default credit account (the Normal GL Account from the customer master or the Sales account from company options) or for entering multiple credits (i.e. if an amount needs to be split between multiple sales accounts). Note:  The maximum number of credit accounts that can be used to split the invoice amount is ten.
+
+ 
+
+Multiple Debit Entries.  This option is used for recording the invoice amount to multiple debit accounts (i.e. if a company splits invoices among several accounts receivable accounts).  In addition, this option allows for overriding the default credit account (the Normal GL Account from the customer master or the Sales account from company options) or for entering multiple credits (i.e. if an amount needs to be split between multiple sales accounts). Note:  The maximum number of credit accounts that can be used to split the invoice amount is ten.
+
+ 
+
+Single Entry to Standard Accts.  This option automatically debits the default Accounts Receivable account (Account Code 1) listed in the company options and credits the default account listed in the Normal GL Account field on the customer master. There are no additional screens to change/add general ledger accounts as mentioned for the other two options listed above. Note: If the customer does not have a Normal GL Account defined, the system will credit the default Sales account listed in the company options.
+
+Save
+
+ 
+
+Click Save to save the invoice.  Depending on the option selected, additional screens may appear to change/add general ledger accounts.  Add additional invoices to the batch if needed.
+
+Taxes
+
+ 
+
+This button is only available if the invoice is marked as Taxable.  Click the Taxes button to review the tax information for the invoice and make modifications if needed.
+
+ 
+
+Important:  Refer to the Taxes button on the customer master for more information on this screen.  Differences will be detailed below.
+
+ 
+
+AR-T-AR_Batches_Invoice_Taxes
+
+ 
+
+Taxable.  This checkbox defaults to checked if the invoice is marked as Taxable.  It cannot be unchecked from this screen.
+
+ 
+
+The screen outlines the calculated Tax Amount for each Tax Authority based on the Taxable portion of the invoice (the amount from the Amount to Tax field).  A Total Tax is listed at the bottom.
+
+ 
+
+Click the Retention button to view any calculated retention amount for VAT tax codes that include a retention option. Note: If retention is not calculated/displayed on the invoice screen or posted due to an invoice limit amount, the calculated retention information is available to view through the Taxes button.
+
+ 
+
+AR-T-AR_Batches_Invoice_Taxes_Retention
+
+ 
+
+The screen displays the Retention Type and Retention Percent and shows the calculated Retention Amount.
+
+Clear
+
+ 
+
+Click Clear to clear the invoice information.
+
+Cancel
+
+ 
+
+Click Cancel to cancel the batch and delete any invoice information entered.
+
+ 
+
+Credit Memo Batches
+ 
+
+Credit memo batches in Accounts Receivable are typically only used for startup and this batch type does not allow an actual credit memo to be printed.  Credit memos are normally entered through Quality > Transactions > RMA or Shipping and Receiving > Transactions > RMA.
+
+ 
+
+Refer to the Invoice batch type for definitions for the fields on this screen; differences are noted below.
+
+ 
+
+AR-T-AR_Batches_CreditMemo
+
+ 
+
+Credit Memo.  Enter the credit memo number.  This field is informational only.
+
+ 
+
+To process a credit memo, select a Customer and Invoice Number.  The majority of the invoice information populates the screen. Note:  A standalone credit memo (not tied to an invoice number) may be entered.
+
+ 
+
+Make any necessary changes for the credit memo. Note:  Do not enter a negative invoice amount.  Credit memos are processed as a credit against the Accounts Receivable account.
+
+ 
+
+Select one of the following:
+
+ 
+
+Single Debit Entry. This option is used to override the single default debit account; the Normal GL Account from the customer master or the Sales account from company options.  In addition, this option allows for overriding the default credit account (the Accounts Receivable account from company options) or for entering multiple credits. Note: The default accounts shown on screen are not necessarily the accounts that were posted to when the invoice was originally created.
+
+ 
+
+Multiple Debit Entries. This option is used for recording the credit memo amount to multiple debit accounts (i.e. reversal of multiple sales accounts). In addition, this option allows for overriding the default credit account (the Accounts Receivable account from company options) or for entering multiple credits. Note: The default accounts shown on screen are not necessarily the accounts that were posted to when the invoice was originally created.
+
+ 
+
+Single Entry to Standard Accts.  This option will automatically credit the default Accounts Receivable account (Account Code 1) listed in the company options and debit the default account listed in the Normal GL Account field on the customer master.  There are no additional screens in which to change/add general ledger accounts as mentioned for the other two options listed above. Note: If the customer does not have a Normal GL Account defined, the system will debit the default Sales account listed in the company options.
+
+ 
+
+Select Save. Depending on the option selected, additional screens may display to change/add general ledger accounts.  Add additional credit memos to the batch if needed.
+
+ 
+
+Adjustment Batches
+ 
+
+Adjustment batches are used to increase or decrease receivables by the adjustment amount.  Adjustments are typically used to change an invoice if a customer underpays by a small amount (i.e. penny, dollar) or to write off invoices that will never be paid (bad debts).  Adjustment changes do not affect sales analysis (history), but remove amounts off the aging reports.
+
+ 
+
+Refer to the Invoice batch type for definitions for the fields on this screen.
+
+ 
+
+AR-T-AR_Batches_Adjustment
+
+ 
+
+To process an adjustment, select a Customer Number and Invoice Number. The customer and invoice information populates the screen. If needed, change the Amount to the amount of the adjustment.
+
+Important: Enter the amount as a positive number.
+
+ 
+
+Hint: The Customer PO field can be used to enter a note about the adjustment (i.e. write off, underpaid, etc.).
+
+ 
+
+Select either Adjustment Increases Receivables or Adjustment Reduces Receivables.
+
+ 
+
+Click Save to continue.
+
+AR-T-AR_Batches_Adjustment_020
+
+ 
+
+Enter the GL Account(s) to debit or credit depending on if reducing or increasing the receivable and click Save.  The system defaults the account to the customer's Normal GL Account or the default Sales account in company options if a normal GL account does not exist.  Enter additional accounts/amounts as needed until the Total Entered equals the Invoice Total (the amount of the adjustment).  
+
+ 
+
+Important:  Do not enter the Accounts Receivable account.  The system automatically debits or credits the accounts receivable account that the invoice was originally posted to depending on if increasing or reducing receivables. Note:  If the invoice was posted to multiple accounts receivable accounts, the system posts to the first one recorded in the journal entry.
+
+ 
+
+Click Ok to continue.  Enter additional adjustments as needed.
+
+ 
+How do I write off bad debt?
+
+1.Go to AR > Transactions > AR Batches > New
+
+2.Choose an Adjustment type batch
+
+3.Enter customer, invoice number, and amount to be adjusted.  
+
+4.The adjustment will reduce receivables.
+
+5.Debit the allowance for bad debt account.
+
+6.Exit and update the batch.
+
+Additionally, you may want to update the customer in Accounts Receivable > File > Customers –Open.  If you want to continue to do business with this customer, you may just need to adjust the terms to reflect that they are on a cash basis.  You may want to restrict any future order activity without the customer re-establishing credit with the accounting department.  This may be accomplished by checking the ‘Credit Hold’ checkbox.  If you no longer want to do business with this customer be sure to check the ‘Credit Hold’ checkbox and add the letters “DNU” in front of the Bill To name.
+
+You may wish to add notes about the adjustment using the ‘Order Notes’button within the Customer Master or using the ‘Notes’button in Accounts Receivable > View > AR Open Items and History.
+
+
+ 

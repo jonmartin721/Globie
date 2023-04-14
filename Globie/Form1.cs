@@ -50,8 +50,50 @@ namespace Globie
 
         }
 
-        private void askGlobie_Click(object sender, EventArgs e)
+        private async Task askGlobie_ClickAsync(object sender, EventArgs e)
         {
+
+            l_Status.Text = "Training on AP & AR...";
+            l_Status.ForeColor = Color.Blue;
+            b_Send.Enabled = false;
+            
+            string preppedTraining = File.ReadAllText(Properties.Resources.AP___AR_MiniTraining);
+            string chatResponse = "";
+
+            var chatGpt = new ChatGPT();
+
+            var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                   (new ChatCompletionCreateRequest()
+                   {
+                       Messages = new List<ChatMessage>(new ChatMessage[]
+                                { new ChatMessage("user", preppedTraining) }),
+                       Model = Models.ChatGpt3_5Turbo,
+                       Temperature = 0.4F,
+                       MaxTokens = 10000,
+                       N = 1
+                   });
+
+
+            if (completionResult.Successful)
+            {
+                foreach (var choice in completionResult.Choices)
+                {
+                    chatResponse += choice.Message.Content;
+                }
+            }
+            else
+            {
+                if (completionResult.Error == null)
+                {
+                    throw new Exception("Unknown Error");
+                }
+                chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
+            }
+
+            rt_response.Text = chatResponse;
+            l_Status.Text = "Ready!";
+            l_Status.ForeColor = Color.Green;
+            b_Send.Enabled = true;
 
         }
 
@@ -84,22 +126,22 @@ namespace Globie
 
             if (result == DialogResult.OK)
             {
-                file.Url= browseDialog.FileName;
+                file.Url = browseDialog.FileName;
 
-                    try
-                    {
-                        file.CodeText = Regex.Replace(File.ReadAllText(file.Url), @"[\n\r\t]", " ");
-                    }
-                    catch
-                     (Exception ex)
-                    {
-                        MessageBox.Show("Error reading file: " + ex.Message);
-                        file.FileReadSuccess = false;
-                    }
+                try
+                {
+                    file.CodeText = Regex.Replace(File.ReadAllText(file.Url), @"[\n\r\t]", " ");
+                }
+                catch
+                 (Exception ex)
+                {
+                    MessageBox.Show("Error reading file: " + ex.Message);
+                    file.FileReadSuccess = false;
+                }
 
-                        file.FileReadSuccess = true;
+                file.FileReadSuccess = true;
 
-                if (file.FileReadSuccess ){ tb_fileURL.Text = file.Url; }
+                if (file.FileReadSuccess) { tb_fileURL.Text = file.Url; }
             }
 
         }
@@ -111,11 +153,22 @@ namespace Globie
 
         private async void b_Send_Click(object sender, EventArgs e)
         {
+            l_Status.Text = "Waiting on Globie...";
+            l_Status.ForeColor = Color.Fuchsia;
+            b_Send.Enabled = false;
+
             string chatResponse = "";
             int selectedIndex = tabControl1.SelectedIndex;
 
             if (selectedIndex == 1)
             {
+
+                l_Status.Text = "Training on AP & AR...";
+                l_Status.ForeColor = Color.Fuchsia;
+
+
+
+
                 string question = rt_askGlobey.Text;
 
                 var chatGpt = new ChatGPT();
@@ -127,7 +180,7 @@ namespace Globie
                                     { new ChatMessage("user", question) }),
                            Model = Models.ChatGpt3_5Turbo,
                            Temperature = 0.4F,
-                           MaxTokens = 1000,
+                           MaxTokens = 10000,
                            N = 1
                        });
 
@@ -186,6 +239,10 @@ namespace Globie
             }
 
             rt_response.Text = chatResponse;
+            l_Status.Text = "Ready!";
+            l_Status.ForeColor = Color.Green;
+            b_Send.Enabled = true;
+
         }
 
         private void rt_response_TextChanged(object sender, EventArgs e)

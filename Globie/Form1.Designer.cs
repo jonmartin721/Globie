@@ -55,9 +55,9 @@
             // b_Clear
             // 
             b_Clear.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            b_Clear.Location = new Point(588, 690);
+            b_Clear.Location = new Point(584, 676);
             b_Clear.Name = "b_Clear";
-            b_Clear.Size = new Size(75, 23);
+            b_Clear.Size = new Size(75, 37);
             b_Clear.TabIndex = 0;
             b_Clear.Text = "Clear";
             b_Clear.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             b_Send.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             b_Send.ForeColor = Color.Green;
-            b_Send.Location = new Point(669, 690);
+            b_Send.Location = new Point(665, 676);
             b_Send.Name = "b_Send";
-            b_Send.Size = new Size(136, 23);
+            b_Send.Size = new Size(136, 37);
             b_Send.TabIndex = 1;
             b_Send.Text = "Send";
             b_Send.UseVisualStyleBackColor = true;
@@ -126,6 +126,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(791, 207);
             tabControl1.TabIndex = 10;
+            tabControl1.SelectedIndexChanged += askGlobie_ClickAsync;
             // 
             // codeAnalyzer
             // 
@@ -217,12 +218,12 @@
             rt_response.Text = "";
             rt_response.TextChanged += rt_response_TextChanged;
             // 
-            // label1
+            // l_response
             // 
             l_response.AutoSize = true;
             l_response.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             l_response.Location = new Point(18, 411);
-            l_response.Name = "label1";
+            l_response.Name = "l_response";
             l_response.Size = new Size(70, 19);
             l_response.TabIndex = 12;
             l_response.Text = "Response:";

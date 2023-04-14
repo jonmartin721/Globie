@@ -61,6 +61,25 @@ namespace Globie.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How do I add an invoice to credit card vendor ? 
+        ///
+        ///Invoices can be added to credit card vendors just like any other vendor using Accounts Payable &gt; Transactions &gt; AP Batch Entry &gt; New. Or invoices can be added directly in the  Select/Deselect for Payment menu item.  
+        ///
+        ///To add invoices directly from the Select/Deselect for Payment menu item. These would be the steps: 
+        ///
+        ///1. AP &gt; Transactions &gt; Select/Deselect Invoice for Payment
+        ///2. Select credit card vendor and click OK
+        ///3. Click the Add button
+        ///
+        ///4. To a [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AP___AR_MiniTraining {
+            get {
+                return ResourceManager.GetString("AP___AR_MiniTraining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Globey {
