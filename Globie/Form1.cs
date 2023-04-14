@@ -11,6 +11,10 @@ namespace Globie
         public f_main()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.Globey;
+            l_Status.Text = "Ready";
+            l_Status.Visible = true;
+            l_Status.ForeColor = Color.Green;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -69,6 +73,17 @@ namespace Globie
 
         private void button2_Click(object sender, EventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Code Files (*.*)|*.*";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFile = openFileDialog1.FileName;
+                tb_fileURL.Text = selectedFile;
+                // Do something with the selected file
+            }
+
+
 
         }
 
@@ -93,14 +108,14 @@ namespace Globie
                        {
                            Messages = new List<ChatMessage>(new ChatMessage[]
                                     { new ChatMessage("user", question) }),
-                                        Model = Models.ChatGpt3_5Turbo,
-                                        Temperature = 0.5F,
-                                        MaxTokens = 100,
-                                        N = 1
+                           Model = Models.ChatGpt3_5Turbo,
+                           Temperature = 0.5F,
+                           MaxTokens = 100,
+                           N = 1
                        });
 
 
-                if(completionResult.Successful)
+                if (completionResult.Successful)
                 {
                     foreach (var choice in completionResult.Choices)
                     {
