@@ -135,6 +135,20 @@ namespace Globie.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dusty Alexander!  
+        ///A Crossfit Warrior!  Health Nut!  A lover of Global Shop customers!
+        ///He is President/CEO of Global Shop Solutions ERP/MRP manufacturing software. 
+        ///Global Shop Solutions is the only provider of One-System ERP Solutions™, designed to streamline operations and help companies become more lean. Our ERP software has helped thousands of discrete manufacturers increase sales, improve quality and on-time delivery, and lower costs.
+        ///
+        ///Founded in 1976 by Dick Alexander, Global Shop Solutions&apos; owne [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string dustyInitial {
+            get {
+                return ResourceManager.GetString("dustyInitial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Globey {

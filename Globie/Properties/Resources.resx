@@ -136,4 +136,7 @@
   <data name="AR_WriteOffBadDebt_PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ar_writeoffbaddebt_pdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="dustyInitial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\dustyinitial.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

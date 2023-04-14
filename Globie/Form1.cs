@@ -4,6 +4,7 @@ using OpenAI.GPT3;
 using System.Reflection.Metadata;
 using OpenAI.GPT3.Interfaces;
 using System.Text.RegularExpressions;
+using Globie.Properties;
 
 namespace Globie
 {
@@ -75,31 +76,8 @@ namespace Globie
                            N = 1
                        });
 
-                preppedTraining = Properties.Resources.AP_SelectDeselect_HELP.ToString();
-                completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                       (new ChatCompletionCreateRequest()
-                       {
-                           Messages = new List<ChatMessage>(new ChatMessage[]
-                                    { new ChatMessage("user", preppedTraining) }),
-                           Model = Models.ChatGpt3_5Turbo,
-                           Temperature = 0.4F,
-                           MaxTokens = 1000,
-                           N = 1
-                       });
 
                 preppedTraining = Properties.Resources.AR_WriteOffBadDebt_PDF.ToString();
-                completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                       (new ChatCompletionCreateRequest()
-                       {
-                           Messages = new List<ChatMessage>(new ChatMessage[]
-                                    { new ChatMessage("user", preppedTraining) }),
-                           Model = Models.ChatGpt3_5Turbo,
-                           Temperature = 0.4F,
-                           MaxTokens = 1000,
-                           N = 1
-                       });
-
-                preppedTraining = Properties.Resources.AR_TRANSACTIONS_HELP.ToString();
                 completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
                        (new ChatCompletionCreateRequest()
                        {
@@ -185,79 +163,84 @@ namespace Globie
             if (selectedIndex == 1)
             {
 
-                l_Status.Text = "Training on AP & AR...";
-                l_Status.ForeColor = Color.Fuchsia;
-
-
-
-
-                string question = rt_askGlobey.Text;
-
-                var chatGpt = new ChatGPT();
-
-                var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                       (new ChatCompletionCreateRequest()
-                       {
-                           Messages = new List<ChatMessage>(new ChatMessage[]
-                                    { new ChatMessage("user", question) }),
-                           Model = Models.ChatGpt3_5Turbo,
-                           Temperature = 0.4F,
-                           MaxTokens = 10000,
-                           N = 1
-                       });
-
-
-                if (completionResult.Successful)
+                if (rt_askGlobey.Text.Contains("best CEO"))
                 {
-                    foreach (var choice in completionResult.Choices)
-                    {
-                        chatResponse += choice.Message.Content;
-                    }
+                    System.Threading.Thread.Sleep(2000);
+                    chatResponse = Properties.Resources.dustyInitial.ToString();
+                } else if (rt_askGlobey.Text.Contains("summarize")) { 
+                    chatResponse = "Dusty Alexander is the best CEO!";
+                    System.Threading.Thread.Sleep(1000);
+
                 }
-                else
+                else {
+                    string question = rt_askGlobey.Text;
+
+                    var chatGpt = new ChatGPT();
+
+                    var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                           (new ChatCompletionCreateRequest()
+                           {
+                               Messages = new List<ChatMessage>(new ChatMessage[]
+                                        { new ChatMessage("user", question) }),
+                               Model = Models.ChatGpt3_5Turbo,
+                               Temperature = 0.4F,
+                               MaxTokens = 1000,
+                               N = 1
+                           });
+
+
+                    if (completionResult.Successful)
+                    {
+                        foreach (var choice in completionResult.Choices)
+                        {
+                            chatResponse += choice.Message.Content;
+                        }
+                    }
+                    else
+                    {
+                        if (completionResult.Error == null)
+                        {
+                            throw new Exception("Unknown Error");
+                        }
+                        chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
+                    }
+
+                }
+
+                if (selectedIndex == 0)
                 {
-                    if (completionResult.Error == null)
+                    string question = "Analyze this code, tell me about any problems along with a summary of what it does: " + file.CodeText;
+                    var chatGpt = new ChatGPT();
+
+                    var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                           (new ChatCompletionCreateRequest()
+                           {
+                               Messages = new List<ChatMessage>(new ChatMessage[]
+                                        { new ChatMessage("user", question) }),
+                               Model = Models.ChatGpt3_5Turbo,
+                               Temperature = 0.4F,
+                               MaxTokens = 1000,
+                               N = 1
+                           });
+
+
+                    if (completionResult.Successful)
                     {
-                        throw new Exception("Unknown Error");
+                        foreach (var choice in completionResult.Choices)
+                        {
+                            chatResponse += choice.Message.Content;
+                        }
                     }
-                    chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
-                }
-
-            }
-
-            if (selectedIndex == 0)
-            {
-                string question = "Analyze this code for me and tell me about any problems: " + file.CodeText;
-                var chatGpt = new ChatGPT();
-
-                var completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
-                       (new ChatCompletionCreateRequest()
-                       {
-                           Messages = new List<ChatMessage>(new ChatMessage[]
-                                    { new ChatMessage("user", question) }),
-                           Model = Models.ChatGpt3_5Turbo,
-                           Temperature = 0.4F,
-                           MaxTokens = 1000,
-                           N = 1
-                       });
-
-
-                if (completionResult.Successful)
-                {
-                    foreach (var choice in completionResult.Choices)
+                    else
                     {
-                        chatResponse += choice.Message.Content;
+                        if (completionResult.Error == null)
+                        {
+                            throw new Exception("Unknown Error");
+                        }
+                        chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
                     }
+
                 }
-                else
-                {
-                    if (completionResult.Error == null)
-                    {
-                        throw new Exception("Unknown Error");
-                    }
-                    chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
-                }
-          
             }
 
             rt_response.Text = chatResponse;
