@@ -11,6 +11,8 @@ namespace Globie
         public f_main()
         {
             InitializeComponent();
+            this.Icon = Properties.Resources.Globey;
+
             if (l_Status.Text != "Ready!")
             {
                 rt_askGlobey.Enabled = false;
@@ -97,7 +99,7 @@ namespace Globie
         {
             OpenFileDialog browseDialog = new OpenFileDialog();
             browseDialog.InitialDirectory = "c:\\";
-            browseDialog.Filter = "CBL File (*.cbl)|*.CBL|All files (*.*)|*.*";
+            browseDialog.Filter = "All files (*.*)|*.*";
             DialogResult result = browseDialog.ShowDialog();
 
             if (result == DialogResult.OK)
