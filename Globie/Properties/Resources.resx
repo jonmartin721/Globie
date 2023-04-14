@@ -121,10 +121,19 @@
   <data name="Globey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\globey.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AP___AR_MiniTraining" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ap - ar minitraining.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Globey2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\globey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AP_AddInvtoCCVend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ap_addinvtoccvend.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="AP_SelectDeselect_HELP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ap_selectdeselect_help.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AR_TRANSACTIONS_HELP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ar_transactions_help.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AR_WriteOffBadDebt_PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ar_writeoffbaddebt_pdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

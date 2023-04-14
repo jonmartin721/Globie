@@ -1,0 +1,33 @@
+How do I add an invoice to credit card vendor ? 
+
+Invoices can be added to credit card vendors just like any other vendor using Accounts Payable > Transactions > AP Batch Entry > New. Or invoices can be added directly in the  Select/Deselect for Payment menu item.  
+
+To add invoices directly from the Select/Deselect for Payment menu item. These would be the steps: 
+
+1. AP > Transactions > Select/Deselect Invoice for Payment
+2. Select credit card vendor and click OK
+3. Click the Add button
+
+4. To add an invoice already recorded on another vendor, Select Vendor No. whose invoices were paid by the credit card vendor.
+5. Select the vendor's invoice.
+6. Enter the Amount Paid by Credit Card. The amount from the invoice defaults but can be altered.
+7. Click Save to add the invoice to the grid.
+
+Note: Vendors and invoices on pay hold cannot be selected. If the invoice was paid by multiple credit cards, enter only the amount paid by this credit card. The remaining invoice balance can be paid through other credit card vendors.
+
+8.To remove a selected invoice, double-click the invoice in the grid to make it active and click Delete. 
+9.Upon exit, a message appears to confirm invoice additions since the invoice amounts paid by credit card are automatically removed from the original vendor and moved to the credit card vendor.
+Note: Invoices moved to the credit card vendor cannot be moved back to the original vendor. If invoices are moved in error, it would need to be adjusted off the credit card vendor and reentered for the original vendor.
+
+
+From this screen you can enter new invoices for the credit card vendor not already entered on a vendor account (i.e. miscellaneous charges, etc.). These would be the following steps: 
+1. click on the New button.
+2. Click OK
+3. Enter invoice information
+4. Click Save, then Exit.
+5. Add New invoices as needed, then X out when done
+6. Click on the Post button to post new invoices.
+7. Print report
+8. Type Y in Pay column to pay the new invoice.
+9. Click the arrow buttons to choose invoices from other vendors or Save if finished.
+10. Continue with the check run process as usual

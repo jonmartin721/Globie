@@ -1,0 +1,18 @@
+How do I write off bad debt?
+
+1.Go to AR > Transactions > AR Batches > New
+
+2.Choose an Adjustment type batch
+
+3.Enter customer, invoice number, and amount to be adjusted.  
+
+4.The adjustment will reduce receivables.
+
+5.Debit the allowance for bad debt account.
+
+6.Exit and update the batch.
+
+Additionally, you may want to update the customer in Accounts Receivable > File > Customers –Open.  If you want to continue to do business with this customer, you may just need to adjust the terms to reflect that they are on a cash basis.  You may want to restrict any future order activity without the customer re-establishing credit with the accounting department.  This may be accomplished by checking the ‘Credit Hold’ checkbox.  If you no longer want to do business with this customer be sure to check the ‘Credit Hold’ checkbox and add the letters “DNU” in front of the Bill To name.
+
+You may wish to add notes about the adjustment using the ‘Order Notes’button within the Customer Master or using the ‘Notes’button in Accounts Receivable > View > AR Open Items and History.
+

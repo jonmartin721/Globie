@@ -73,9 +73,64 @@ namespace Globie.Properties {
         ///
         ///4. To a [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string AP___AR_MiniTraining {
+        internal static string AP_AddInvtoCCVend {
             get {
-                return ResourceManager.GetString("AP___AR_MiniTraining", resourceCulture);
+                return ResourceManager.GetString("AP_AddInvtoCCVend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use this menu item to select or deselect vendor invoices to pay in Accounts Payable &gt; Transactions &gt; Checks and Registers.    
+        ///
+        ///After selecting invoices to pay, the remaining steps to complete the check run are first to Prepare Check Proofing and then Checks and Registers.
+        ///
+        ///Accounts Payable &gt; Transactions &gt; Select/Deselect Invoices for Payment
+        ///
+        ///Use this screen to narrow invoices to select for payment based on currency, date range, vendor, and a User 1 field or to quickly select or deselect all invoice [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AP_SelectDeselect_HELP {
+            get {
+                return ResourceManager.GetString("AP_SelectDeselect_HELP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This menu item is used to enter accounts receivable batches. The four types available are: Cash, Invoice, Credit Memo, and Adjustment.
+        ///
+        /// 
+        ///
+        ///Once batches are entered, select the X to exit. The batch(es) can be updated immediately through the Post Batches screen or at a later time through Update AR Batches.  An audit trail prints upon exiting.  Batches can be modified before update through Accounts Receivable &gt; Transactions &gt; AR Batches &gt; Open.
+        ///
+        /// 
+        ///
+        ///Note: The Business Intelligence version of the Account [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AR_TRANSACTIONS_HELP {
+            get {
+                return ResourceManager.GetString("AR_TRANSACTIONS_HELP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How do I write off bad debt?
+        ///
+        ///1.Go to AR &gt; Transactions &gt; AR Batches &gt; New
+        ///
+        ///2.Choose an Adjustment type batch
+        ///
+        ///3.Enter customer, invoice number, and amount to be adjusted.  
+        ///
+        ///4.The adjustment will reduce receivables.
+        ///
+        ///5.Debit the allowance for bad debt account.
+        ///
+        ///6.Exit and update the batch.
+        ///
+        ///Additionally, you may want to update the customer in Accounts Receivable &gt; File &gt; Customers –Open.  If you want to continue to do business with this customer, you may just need to adjust the terms to refle [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AR_WriteOffBadDebt_PDF {
+            get {
+                return ResourceManager.GetString("AR_WriteOffBadDebt_PDF", resourceCulture);
             }
         }
         

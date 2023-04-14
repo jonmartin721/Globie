@@ -54,12 +54,12 @@ namespace Globie
         private async void askGlobie_ClickAsync(object sender, EventArgs e)
         {
 
-            l_Status.Text = "Training on AP & AR...";
+            if (tb_fileURL.)
+            l_Status.Text = "Training on AP + AR...";
             l_Status.ForeColor = Color.Blue;
             b_Send.Enabled = false;
 
-            string preppedTraining = Properties.Resources.AP___AR_MiniTraining;
-            string chatResponse = "";
+            string preppedTraining = Properties.Resources.AP_AddInvtoCCVend.ToString();
 
             var chatGpt = new ChatGPT();
 
@@ -70,28 +70,48 @@ namespace Globie
                                 { new ChatMessage("user", preppedTraining) }),
                        Model = Models.ChatGpt3_5Turbo,
                        Temperature = 0.4F,
-                       MaxTokens = 10000,
+                       MaxTokens = 1000,
+                       N = 1
+                   });
+
+            preppedTraining = Properties.Resources.AP_SelectDeselect_HELP.ToString();
+            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                   (new ChatCompletionCreateRequest()
+                   {
+                       Messages = new List<ChatMessage>(new ChatMessage[]
+                                { new ChatMessage("user", preppedTraining) }),
+                       Model = Models.ChatGpt3_5Turbo,
+                       Temperature = 0.4F,
+                       MaxTokens = 1000,
+                       N = 1
+                   });
+
+            preppedTraining = Properties.Resources.AR_WriteOffBadDebt_PDF.ToString();
+            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                   (new ChatCompletionCreateRequest()
+                   {
+                       Messages = new List<ChatMessage>(new ChatMessage[]
+                                { new ChatMessage("user", preppedTraining) }),
+                       Model = Models.ChatGpt3_5Turbo,
+                       Temperature = 0.4F,
+                       MaxTokens = 1000,
+                       N = 1
+                   });
+            
+            preppedTraining = Properties.Resources.AR_TRANSACTIONS_HELP.ToString();
+            completionResult = await chatGpt.OpenAIService.ChatCompletion.CreateCompletion
+                   (new ChatCompletionCreateRequest()
+                   {
+                       Messages = new List<ChatMessage>(new ChatMessage[]
+                                { new ChatMessage("user", preppedTraining) }),
+                       Model = Models.ChatGpt3_5Turbo,
+                       Temperature = 0.4F,
+                       MaxTokens = 1000,
                        N = 1
                    });
 
 
-            if (completionResult.Successful)
-            {
-                foreach (var choice in completionResult.Choices)
-                {
-                    chatResponse += choice.Message.Content;
-                }
-            }
-            else
-            {
-                if (completionResult.Error == null)
-                {
-                    throw new Exception("Unknown Error");
-                }
-                chatResponse = ($"{completionResult.Error.Code}:{completionResult.Error.Message}");
-            }
-
-            rt_response.Text = chatResponse;
+            rt_response.Text = "I'm trained and ready to answer your questions as accurately as possible!";
             l_Status.Text = "Ready!";
             l_Status.ForeColor = Color.Green;
             b_Send.Enabled = true;
@@ -154,7 +174,7 @@ namespace Globie
 
         private async void b_Send_Click(object sender, EventArgs e)
         {
-            l_Status.Text = "Waiting on Globie...";
+            l_Status.Text = "Waiting on Globey...";
             l_Status.ForeColor = Color.Fuchsia;
             b_Send.Enabled = false;
 
