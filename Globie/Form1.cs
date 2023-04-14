@@ -95,7 +95,7 @@ namespace Globie
                                     { new ChatMessage("user", question) }),
                                         Model = Models.ChatGpt3_5Turbo,
                                         Temperature = 0.5F,
-                                        MaxTokens = 100,
+                                        MaxTokens = 10000,
                                         N = 1
                        });
 
